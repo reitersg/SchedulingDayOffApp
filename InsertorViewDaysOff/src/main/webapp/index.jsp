@@ -13,6 +13,7 @@
     <a href ="/web/daysOffList.html">Click to view days off</a>
   <br />
   <br />
+    <a href ="/web/deletedaysoff.html">Click here to delete one of your days off</a>
   </body>
 
 </html>

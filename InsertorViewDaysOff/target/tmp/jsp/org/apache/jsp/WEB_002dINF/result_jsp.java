@@ -53,7 +53,7 @@ public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <title>Day Off</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("<h2>Submitted Day Off</h2>\r\n");
+      out.write("<h2>Day Off</h2>\r\n");
       out.write("\r\n");
       out.write("    Dates: ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${dates}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -64,6 +64,9 @@ public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <br />\r\n");
       out.write("    <br />\r\n");
       out.write("    <a href = \"/web/daysoff.html\">Click to select another day off</a>\r\n");
+      out.write("    <br>\r\n");
+      out.write("    <br>\r\n");
+      out.write("    <a href=\"/web/deletedaysoff.hmtl\">Click to delete another day off</a>\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

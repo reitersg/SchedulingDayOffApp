@@ -16,7 +16,7 @@
     <title>Day Off</title>
 </head>
 <body>
-<h2>Submitted Day Off</h2>
+<h2>Day Off</h2>
 
     Dates: ${dates}
     <br />
@@ -24,6 +24,9 @@
     <a href ="http://localhost:9090">Return to Home Page</a>
     <br />
     <br />
-    <a href = "/web/daysoff.html">Click to select another day off</a>
+    <a href = "/web/daysoff.html">Click to submit another day off</a>
+    <br>
+    <br>
+    <a href="/web/deletedaysoff.hmtl">Click to delete another day off</a>
 </body>
 </html>

@@ -56,6 +56,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <a href =\"/web/daysOffList.html\">Click to view days off</a>\r\n");
       out.write("  <br />\r\n");
       out.write("  <br />\r\n");
+      out.write("    <a href =\"/web/deletedaysoff.html\">Click here to delete one of your days off</a>\r\n");
       out.write("  </body>\r\n");
       out.write("\r\n");
       out.write("</html>\r\n");

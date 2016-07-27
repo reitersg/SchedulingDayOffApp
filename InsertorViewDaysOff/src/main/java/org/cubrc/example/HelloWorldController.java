@@ -22,18 +22,27 @@ public class HelloWorldController {
 	public ModelAndView daysoff() {
 		return new ModelAndView("daysoff", "command", new Date());
 	}
+	@RequestMapping(value = "/deletedaysoff", method = RequestMethod.GET)
+	public ModelAndView deletedaysoff() {return new ModelAndView("deletedaysoff", "command", new Date());}
 	@RequestMapping(value ="/addDayOff", method = RequestMethod.POST)
 	public String daysOffSubmit(@ModelAttribute("SpringWeb")Date date, Model model) throws IOException{
-			String day = date.getDay();
-			String month = date.getMonth();
-			String year = date.getYear();
-			String insertDate = "\"" + year + "-" + month + "-" + day + "\"";
+			String insertDate = "\"" + date.toString() + "\"";
 			Query query = new Query();
 			query.insertDate(insertDate);
 			String dates = query.selectDate();
 			StringBuilder sb = DaysOffParser.parseDate(dates);
 			model.addAttribute("dates", sb.toString());
 			return "result";
+	}
+	@RequestMapping(value = "/deleteDayOff", method = RequestMethod.POST)
+	public String dayOffDelete(@ModelAttribute("SpringWeb")Date date, Model model) throws IOException{
+		String deleteDate = "\"" + date.toString() + "\"";
+		Query query = new Query();
+		query.deleteDate(deleteDate);
+		String dates = query.selectDate();
+		StringBuilder sb = DaysOffParser.parseDate(dates);
+		model.addAttribute("dates", sb.toString());
+		return "result";
 	}
 	@RequestMapping(value="/daysOffList")
 	public String daysOffList(Model model) throws IOException{

@@ -28,5 +28,14 @@ public class Query {
         String response = client.post("", query);
         return response;
     }
+    public void deleteDate(String date){
+        RestClient client = new RestClient();
+        client.setServerToUpdate();
+        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
+                "PREFIX to: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
+                "delete where { to:DateTime ero:has_text_value " + date +
+                " } ";
+        client.post("", query);
+    }
 
 }
