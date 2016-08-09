@@ -71,6 +71,8 @@
     <option value="2017">2017</option>
     <option value="2018">2018</option>
 </form:select>
+<form:label path="purpose">Purpose for day off</form:label>
+    <form:input path="purpose" />
 <input type="submit" value="Submit Date">
  </form:form>
 </body>

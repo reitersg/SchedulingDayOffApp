@@ -21,6 +21,12 @@
     Dates: ${dates}
     <br />
     <br />
+    Times: ${times}
+    <br>
+    <br>
+    Purposes: ${purposes}
+    <br>
+    <br>
     <a href ="http://localhost:9090">Return to Home Page</a>
     <br />
     <br />

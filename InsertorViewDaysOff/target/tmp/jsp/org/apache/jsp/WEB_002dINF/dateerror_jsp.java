@@ -1,10 +1,10 @@
-package org.apache.jsp;
+package org.apache.jsp.WEB_002dINF;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class dateerror_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -30,7 +30,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html; charset=UTF-8");
+      response.setContentType("text/html;charset=UTF-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -42,26 +42,17 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\r\n");
-      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
-      out.write("<html>\r\n");
-      out.write("  <head>\r\n");
-      out.write("    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("    <title>DayOff</title>\r\n");
-      out.write("  </head>\r\n");
-      out.write("  <body>\r\n");
-      out.write("  <h1>Day Off</h1>\r\n");
-      out.write("    <a href =\"/web/daysoff.html\">Select your day off here</a>\r\n");
-      out.write("  <br />\r\n");
-      out.write("  <br />\r\n");
-      out.write("    <a href =\"/web/daysOffList.html\">Click to view days off</a>\r\n");
-      out.write("  <br />\r\n");
-      out.write("  <br />\r\n");
-      out.write("    <a href =\"/web/deletedaysoff.html\">Click here to delete one of your days off</a>\r\n");
-      out.write("  <br>\r\n");
-      out.write("  <br>\r\n");
-      out.write("  <a href = \"/web/daysoffperiod1.html\">Click here to select time period off</a>\r\n");
-      out.write("  </body>\r\n");
       out.write("\r\n");
+      out.write("<html>\r\n");
+      out.write("<head>\r\n");
+      out.write("    <title>Error: Submitted a Holiday</title>\r\n");
+      out.write("</head>\r\n");
+      out.write("<body>\r\n");
+      out.write("    <h1>You tried submitting a holiday, click the link below to try again</h1>\r\n");
+      out.write("    <br>\r\n");
+      out.write("    <br>\r\n");
+      out.write("    <a href = \"/web/daysoff.html\">Try again</a>\r\n");
+      out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

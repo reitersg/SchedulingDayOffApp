@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 public class RestClient {
 
         private String server = "http://localhost:3030/prototype/query";
-        private RestTemplate rest;
+         private RestTemplate rest;
         public HttpHeaders headers;
         private HttpStatus status;
 

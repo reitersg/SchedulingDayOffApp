@@ -14,6 +14,9 @@
   <br />
   <br />
     <a href ="/web/deletedaysoff.html">Click here to delete one of your days off</a>
+  <br>
+  <br>
+  <a href = "/web/daysoffperiod1.html">Click here to select time period off</a>
   </body>
 
 </html>
