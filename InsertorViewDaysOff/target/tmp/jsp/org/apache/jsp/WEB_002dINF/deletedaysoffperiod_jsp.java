@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class deletedaysoffperiod_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -64,11 +64,6 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("<link href=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/static/style.css\"\r\n");
-      out.write("      rel=\"stylesheet\" type=\"text/css\">\r\n");
-      out.write("\r\n");
       out.write("\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
@@ -83,7 +78,7 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
       _jspx_th_form_form_0.setPageContext(_jspx_page_context);
       _jspx_th_form_form_0.setParent(null);
       _jspx_th_form_form_0.setMethod("POST");
-      _jspx_th_form_form_0.setAction("/web/addTimePeriod2");
+      _jspx_th_form_form_0.setAction("/web/deleteTimePeriod");
       _jspx_th_form_form_0.setCommandName("Date");
       int[] _jspx_push_body_count_form_form_0 = new int[] { 0 };
       try {
@@ -330,9 +325,12 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\r\n");
       out.write("<br>\r\n");
       out.write("<br>\r\n");
+      out.write("<a href = \"/web/daysOffList.html\">Click here to view your time periods</a>\r\n");
+      out.write("<br>\r\n");
+      out.write("<br>\r\n");
       out.write("<a href =\"http://localhost:9090\">Return to Home Page</a>\r\n");
       out.write("</body>\r\n");
-      out.write("</html>\r\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

@@ -86,4 +86,29 @@ public class DaysOffParser {
             return sb;
         }
     }
+    public static StringBuilder parseVacation(String jsonVacation) throws IOException{
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        StringBuilder sb = new StringBuilder();
+        JsonNode node = mapper.readValue(jsonVacation, JsonNode.class);
+
+        JsonNode results = node.get("results");
+        JsonNode bindings = results.get("bindings");
+        JsonNode temp;
+        JsonNode vacationValue;
+        JsonNode vacation;
+        if (bindings.size() == 0){
+            return new StringBuilder();
+        } else {
+            for (int i = 0; i < bindings.size() - 1; i++) {
+                temp = bindings.get(i);
+                vacation = temp.get("vacation");
+                vacationValue = vacation.get("value");
+                String vacationTemp = vacationValue.asText();
+                sb.append(vacationTemp + ", ");
+            }
+            sb.append(bindings.get(bindings.size() - 1).get("vacation").get("value").asText());
+            return sb;
+        }
+    }
 }

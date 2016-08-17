@@ -70,13 +70,25 @@ public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("    <br>\r\n");
       out.write("    <br>\r\n");
+      out.write("    Vacations: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${vacations}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\r\n");
+      out.write("<br>\r\n");
+      out.write("<br>\r\n");
       out.write("    <a href =\"http://localhost:9090\">Return to Home Page</a>\r\n");
       out.write("    <br />\r\n");
       out.write("    <br />\r\n");
       out.write("    <a href = \"/web/daysoff.html\">Click to submit another day off</a>\r\n");
       out.write("    <br>\r\n");
       out.write("    <br>\r\n");
-      out.write("    <a href=\"/web/deletedaysoff.hmtl\">Click to delete another day off</a>\r\n");
+      out.write("    <a href=\"/web/deletedaysoff.hmtl\">Click to delete another day off</a\r\n");
+      out.write("    <br>\r\n");
+      out.write("    <br>\r\n");
+      out.write("    <br>\r\n");
+      out.write("    <a href = \"/web/addTimePeriod1.html\">Click to submit another time period</a>\r\n");
+      out.write("    <br>\r\n");
+      out.write("    <br>\r\n");
+      out.write("    <a href = \"/web/deletedaysoffperiod.html\">Click to delete another time period</a>\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

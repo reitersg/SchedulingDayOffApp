@@ -31,6 +31,37 @@ public class DateCheck {
         Query query = new Query();
         String dates = query.selectDate();
         StringBuilder sb = DaysOffParser.parseDate(dates);
-        return sb.toString().contains(date);
+        String vacation = query.selectMultipleDates();
+        StringBuilder vacations = DaysOffParser.parseDate(vacation);
+        return (sb.toString().contains(date));
+    }
+    public static boolean checkSameDate(Date date) {
+        if (date.getDay().equals(date.getEndDay()) && date.getEndMonth().equals(date.getMonth()) && date.getEndYear().equals(date.getYear())){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public static boolean checkDayOffEmpty(Date date){
+        if (date.getMonth().equals("") || date.getDay().equals("") || date.getYear().equals("") || date.getPurpose().equals("")){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public static boolean checkTimePeriodEmpty(Date date){
+        if (date.getMonth().equals("") || date.getDay().equals("") || date.getYear().equals("") || date.getPurpose().equals("") || date.getStartTime().equals("") ||
+                date.getStartTimePeriod().equals("") || date.getEndTime().equals("") || date.getEndTimePeriod().equals("")){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public static boolean checkVacationEmpty(Date date){
+        if (date.getMonth().equals("") || date.getDay().equals("") || date.getYear().equals("") || date.getEndDay().equals("") || date.getEndMonth().equals("") || date.getEndYear().equals("")){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

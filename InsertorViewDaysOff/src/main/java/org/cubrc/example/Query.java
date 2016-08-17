@@ -19,6 +19,15 @@ public class Query {
                 +"insert data { to:DateTime ero:has_text_value"+ date + "}";
         client.post("", query);
     }
+    public void insertVacation(Date date){
+        RestClient client = new RestClient();
+        client.setServerToUpdate();
+        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
+                "PREFIX ex: <http://www.example.ex/ontologyinstances#>"+
+                "insert data {ex:Vacation ero:has_text_value" + "\"" + date.toString() + " - " + date.toStringEnd() + "\""
+                + "}";
+        client.post("", query);
+    }
     public void insertPurpose(String purpose){
         RestClient client = new RestClient();
         client.setServerToUpdate();
@@ -44,6 +53,16 @@ public class Query {
         String response = client.post("", query);
         return response;
     }
+    public String selectVacation(){
+        RestClient client = new RestClient();
+        client.setServerToQuery();
+        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
+                "PREFIX to: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
+                "select ?vacation where { to:Vacation ero:has_text_value ?vacation } ";
+        String response = client.post("", query);
+        return response;
+    }
+
     public String selectPurpose(){
         RestClient client = new RestClient();
         client.setServerToQuery();
@@ -70,14 +89,35 @@ public class Query {
                 "delete where { to:DateTime ero:has_text_value " + "\"" + date.toString()+
                 "\"" +
                 " } ";
-        String purposeQuery = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
+        client.post("", dateQuery);
+
+    }
+    public void deleteVacation(Date date){
+        RestClient client = new RestClient();
+        client.setServerToQuery();
+        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
+                "PREFIX to: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
+                "delete where { to:Vacation ero:has_text_value"+ "\"" + date.toString() + " - " + date.toStringEnd() + "\"" + " } ";
+        String response = client.post("", query);
+    }
+
+    public void deletePurpose(Date date){
+        RestClient client = new RestClient();
+        client.setServerToUpdate();
+        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
                 "PREFIX ex: <http://www.example.ex/ontologyinstances#>" +
                 "delete where { ex:Purpose ero:has_text_value" + "\"" + date.getPurpose()
                 + "\"" +
                 " } ";
-        client.post("", dateQuery);
-        client.post("", purposeQuery);
+        String response = client.post("", query);
     }
-
+    public void deleteTime(Date date){
+        RestClient client = new RestClient();
+        client.setServerToUpdate();
+        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>"+
+                "PREFIX to: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>"+
+                "delete where {to:TimeOfDay ero:has_text_value" + "\"" + "(" + date.toString() + ") " + date.getTime() + "\"" + "}";
+        String response = client.post("", query);
+    }
 
 }

@@ -27,12 +27,28 @@
     Purposes: ${purposes}
     <br>
     <br>
+    Vacations: ${vacations}
+<br>
+<br>
     <a href ="http://localhost:9090">Return to Home Page</a>
     <br />
     <br />
     <a href = "/web/daysoff.html">Click to submit another day off</a>
     <br>
     <br>
-    <a href="/web/deletedaysoff.hmtl">Click to delete another day off</a>
+    <a href="/web/deletedaysoff.hmtl">Click to delete another day off</a
+    <br>
+    <br>
+    <br>
+    <a href = "/web/addTimePeriod1.html">Click to submit another time period</a>
+    <br>
+    <br>
+    <a href = "/web/deletedaysoffperiod.html">Click to delete another time period</a>
+    <br>
+    <br>
+    <a href="/web/vacation.html">Click here to submit a vacation</a>
+<br>
+<br>
+<a href = "/web/deletevacation.html">Click here to delete a vacation</a>
 </body>
 </html>

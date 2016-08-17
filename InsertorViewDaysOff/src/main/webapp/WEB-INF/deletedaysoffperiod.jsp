@@ -4,13 +4,10 @@
 <%--
   Created by IntelliJ IDEA.
   User: reitersg
-  Date: 8/3/2016
-  Time: 5:35 PM
+  Date: 8/9/2016
+  Time: 4:29 PM
   To change this template use File | Settings | File Templates.
 --%>
-<link href="${pageContext.request.contextPath}/static/style.css"
-      rel="stylesheet" type="text/css">
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -20,7 +17,7 @@
 <h1>
     Time Off
 </h1>
-<form:form method="POST" action ="/web/addTimePeriod2" commandName="Date">
+<form:form method="POST" action ="/web/deleteTimePeriod" commandName="Date">
     <form:select path="month">
         <option disabled selected value> - Month - </option>
         <option value="01">January</option>
@@ -154,6 +151,9 @@
     <form:input path="purpose" />
     <input type="submit" value="Submit Date">
 </form:form>
+<br>
+<br>
+<a href = "/web/daysOffList.html">Click here to view your time periods</a>
 <br>
 <br>
 <a href ="http://localhost:9090">Return to Home Page</a>

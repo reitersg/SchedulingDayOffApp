@@ -10,13 +10,22 @@
     <a href ="/web/daysoff.html">Select your day off here</a>
   <br />
   <br />
-    <a href ="/web/daysOffList.html">Click to view days off</a>
+    <a href ="/web/daysOffList.html">Click to view days off and time periods</a>
   <br />
   <br />
     <a href ="/web/deletedaysoff.html">Click here to delete one of your days off</a>
   <br>
   <br>
-  <a href = "/web/daysoffperiod1.html">Click here to select time period off</a>
+  <a href = "/web/addTimePeriod1.html">Click here to select time period off</a>
+  <br>
+  <br>
+  <a href = "/web/deletedaysoffperiod.html">Click here to delete one of your time periods</a>
+  <br>
+  <br>
+  <a href="/web/vacation.html">Click here to submit a vacation</a>
+  <br>
+  <br>
+  <a href = "/web/deletevacation.html">Click here to delete a vacation</a>
   </body>
 
 </html>

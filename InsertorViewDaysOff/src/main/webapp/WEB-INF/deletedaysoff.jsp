@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 
 <%--
   Created by IntelliJ IDEA.
@@ -16,9 +17,9 @@
 <h1>
     Day Off
 </h1>
-<form:form method="POST" action ="/web/deleteDayOff">
+<form:form method="POST" action ="/web/deleteDayOff" commandName="Date">
     <form:select path="month">
-        <option> - Month - </option>
+        <option disabled selected value> - Month - </option>
         <option value="01">January</option>
         <option value="02">Febuary</option>
         <option value="03">March</option>
@@ -32,8 +33,10 @@
         <option value="11">November</option>
         <option value="12">December</option>
     </form:select>
+    <br>
+    <br>
     <form:select path="day">
-        <option> - Day - </option>
+        <option disabled selected value> - Day - </option>
         <option value="01">1</option>
         <option value="02">2</option>
         <option value="03">3</option>
@@ -66,18 +69,25 @@
         <option value="30">30</option>
         <option value="31">31</option>
     </form:select>
+    <br>
+    <br>
     <form:select path="year">
-        <option> - Year - </option>
+        <option disabled selected value> - Year - </option>
         <option value="2016">2016</option>
         <option value="2017">2017</option>
         <option value="2018">2018</option>
     </form:select>
-    <form:label path="purpose">Purpose for day off</form:label>
+    <br>
+    <br>
+    <label>Purpose for day off</label>
     <form:input path="purpose" />
     <input type="submit" value="Submit Date">
 </form:form>
 <br>
 <br>
 <a href = "/web/daysOffList.html">Click here to view your days off</a>
+<br>
+<br>
+<a href ="http://localhost:9090">Return to Home Page</a>
 </body>
 </html>
