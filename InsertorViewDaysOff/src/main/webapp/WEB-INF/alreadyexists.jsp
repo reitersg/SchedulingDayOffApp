@@ -14,6 +14,12 @@
 <h1>Date already exists in data, try again</h1>
 <br>
 <br>
-<a href = "/web/daysoff.html">Try Again</a>
+<a href = "/web/daysoff.html">Try again if you tried submitting a day off</a>
+<br>
+<br>
+<a href ="/web/vacation.html">Try again if you tried submitting a vacation</a>
+<br>
+<br>
+<a href = "/web/addTimePeriod1.html">Try again if you tried submitting a time period</a>
 </body>
 </html>

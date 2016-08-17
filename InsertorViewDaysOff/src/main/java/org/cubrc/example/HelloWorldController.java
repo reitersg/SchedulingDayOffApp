@@ -84,13 +84,13 @@ public class HelloWorldController {
 		if (DateCheck.checkTimePeriodEmpty(date)){
 			return "daysoffperiod1";
 		}
-		else if (DateCheck.checkHoliday(date) == true) {
+		else if (DateCheck.checkHoliday(date)) {
 			return "dateerror";
 		}
 		else {
 			String insertDate = "\"" + date.toString() + "\"";
 			Query query = new Query();
-			if (DateCheck.checkAlreadyExists(date.toString()) == true){
+			if (DateCheck.checkAlreadyExists(date.toString())){
 				return "alreadyexists";
 			} else {
 				String insertTime = "\"" + "(" + date.toString() + ") " + date.getTime() + "\"";
@@ -114,10 +114,10 @@ public class HelloWorldController {
 	public String vacationSubmit(@ModelAttribute("Date") Date date, Model model) throws IOException {
 		if (DateCheck.checkVacationEmpty(date)) {
 			return "vacation";
-		} else if (DateCheck.checkSameDate(date) == true) {
+		} else if (DateCheck.checkSameDate(date)) {
 			return "vacationerror";
 		} else {
-			if (DateCheck.checkAlreadyExists(date.toString()) == true) {
+			if (DateCheck.checkVacationAlreadyExists(date.toString() + " - " + date.toStringEnd())) {
 				return "alreadyexists";
 			} else {
 				Query query = new Query();

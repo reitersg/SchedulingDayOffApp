@@ -1,5 +1,4 @@
 package org.cubrc.example;
-
 import java.io.IOException;
 
 /**
@@ -31,9 +30,19 @@ public class DateCheck {
         Query query = new Query();
         String dates = query.selectDate();
         StringBuilder sb = DaysOffParser.parseDate(dates);
-        String vacation = query.selectMultipleDates();
-        StringBuilder vacations = DaysOffParser.parseDate(vacation);
         return (sb.toString().contains(date));
+    }
+    public static boolean checkVacationAlreadyExists(String vacation) throws IOException{
+        Query query = new Query();
+        String vacations = query.selectVacation();
+        StringBuilder sb = DaysOffParser.parseVacation(vacations);
+        return sb.toString().contains(vacation);
+    }
+    public static boolean checkTimeAlreadyExists(String time) throws IOException{
+        Query query = new Query();
+        String times = query.selectTime();
+        StringBuilder sb = DaysOffParser.parseTime(times);
+        return sb.toString().contains(time);
     }
     public static boolean checkSameDate(Date date) {
         if (date.getDay().equals(date.getEndDay()) && date.getEndMonth().equals(date.getMonth()) && date.getEndYear().equals(date.getYear())){
