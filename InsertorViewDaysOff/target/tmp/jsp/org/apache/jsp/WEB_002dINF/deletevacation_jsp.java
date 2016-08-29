@@ -4,14 +4,13 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class deletevacation_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
 
-  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_form_input_path_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_form_form_method_commandName_action;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_form_select_path;
 
@@ -22,13 +21,11 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
   }
 
   public void _jspInit() {
-    _jspx_tagPool_form_input_path_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_form_form_method_commandName_action = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_form_select_path = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
-    _jspx_tagPool_form_input_path_nobody.release();
     _jspx_tagPool_form_form_method_commandName_action.release();
     _jspx_tagPool_form_select_path.release();
   }
@@ -57,26 +54,25 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<link href=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/static/style.css\"\r\n");
-      out.write("      rel=\"stylesheet\" type=\"text/css\">\r\n");
+      out.write('\r');
+      out.write('\n');
       out.write("\r\n");
       out.write("\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
-      out.write("    <title>Time Period off</title>\r\n");
+      out.write("    <title>Title</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("<h1>\r\n");
-      out.write("    Time Off\r\n");
+      out.write("    Day Off\r\n");
       out.write("</h1>\r\n");
       if (_jspx_meth_form_form_0(_jspx_page_context))
         return;
+      out.write("\r\n");
+      out.write("<br>\r\n");
+      out.write("<br>\r\n");
+      out.write("Vacations: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${vacations}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\r\n");
       out.write("<br>\r\n");
       out.write("<br>\r\n");
@@ -105,7 +101,7 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
     _jspx_th_form_form_0.setPageContext(_jspx_page_context);
     _jspx_th_form_form_0.setParent(null);
     _jspx_th_form_form_0.setMethod("POST");
-    _jspx_th_form_form_0.setAction("/web/addTimePeriod2");
+    _jspx_th_form_form_0.setAction("/web/deleteVacation");
     _jspx_th_form_form_0.setCommandName("Date");
     int[] _jspx_push_body_count_form_form_0 = new int[] { 0 };
     try {
@@ -117,8 +113,6 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
           if (_jspx_meth_form_select_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
             return true;
           out.write("\r\n");
-          out.write("    <br>\r\n");
-          out.write("    <br>\r\n");
           out.write("    ");
           if (_jspx_meth_form_select_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
             return true;
@@ -129,33 +123,22 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
           if (_jspx_meth_form_select_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
             return true;
           out.write("\r\n");
-          out.write("    <br>\r\n");
-          out.write("    <br>\r\n");
           out.write("    ");
           if (_jspx_meth_form_select_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
             return true;
           out.write("\r\n");
+          out.write("    <br>\r\n");
+          out.write("    <br>\r\n");
           out.write("    ");
           if (_jspx_meth_form_select_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
             return true;
           out.write("\r\n");
-          out.write("    <br>\r\n");
-          out.write("    <br>\r\n");
           out.write("    ");
           if (_jspx_meth_form_select_5((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
             return true;
           out.write("\r\n");
-          out.write("    ");
-          if (_jspx_meth_form_select_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
-            return true;
-          out.write("\r\n");
           out.write("    <br>\r\n");
           out.write("    <br>\r\n");
-          out.write("    <label>Purpose for time off</label>\r\n");
-          out.write("    ");
-          if (_jspx_meth_form_input_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
-            return true;
-          out.write("\r\n");
           out.write("    <input type=\"submit\" value=\"Submit Date\">\r\n");
           int evalDoAfterBody = _jspx_th_form_form_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -191,7 +174,7 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
       if (_jspx_eval_form_select_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("        <option disabled selected value> - Month - </option>\r\n");
+          out.write("        <option disabled selected value> - Start Month - </option>\r\n");
           out.write("        <option value=\"01\">January</option>\r\n");
           out.write("        <option value=\"02\">February</option>\r\n");
           out.write("        <option value=\"03\">March</option>\r\n");
@@ -232,14 +215,62 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
     org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_select_1 = (org.springframework.web.servlet.tags.form.SelectTag) _jspx_tagPool_form_select_path.get(org.springframework.web.servlet.tags.form.SelectTag.class);
     _jspx_th_form_select_1.setPageContext(_jspx_page_context);
     _jspx_th_form_select_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-    _jspx_th_form_select_1.setPath("day");
+    _jspx_th_form_select_1.setPath("endMonth");
     int[] _jspx_push_body_count_form_select_1 = new int[] { 0 };
     try {
       int _jspx_eval_form_select_1 = _jspx_th_form_select_1.doStartTag();
       if (_jspx_eval_form_select_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("        <option disabled selected value> - Day - </option>\r\n");
+          out.write("        <option disabled selected value> - End Month - </option>\r\n");
+          out.write("        <option value=\"01\">January</option>\r\n");
+          out.write("        <option value=\"02\">February</option>\r\n");
+          out.write("        <option value=\"03\">March</option>\r\n");
+          out.write("        <option value=\"04\">April</option>\r\n");
+          out.write("        <option value=\"05\">May</option>\r\n");
+          out.write("        <option value=\"06\">June</option>\r\n");
+          out.write("        <option value=\"07\">July</option>\r\n");
+          out.write("        <option value=\"08\">August</option>\r\n");
+          out.write("        <option value=\"09\">September</option>\r\n");
+          out.write("        <option value=\"10\">October</option>\r\n");
+          out.write("        <option value=\"11\">November</option>\r\n");
+          out.write("        <option value=\"12\">December</option>\r\n");
+          out.write("    ");
+          int evalDoAfterBody = _jspx_th_form_select_1.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_form_select_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_form_select_1[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_form_select_1.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_form_select_1.doFinally();
+      _jspx_tagPool_form_select_path.reuse(_jspx_th_form_select_1);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_form_select_2(javax.servlet.jsp.tagext.JspTag _jspx_th_form_form_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_form_form_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  form:select
+    org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_select_2 = (org.springframework.web.servlet.tags.form.SelectTag) _jspx_tagPool_form_select_path.get(org.springframework.web.servlet.tags.form.SelectTag.class);
+    _jspx_th_form_select_2.setPageContext(_jspx_page_context);
+    _jspx_th_form_select_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
+    _jspx_th_form_select_2.setPath("day");
+    int[] _jspx_push_body_count_form_select_2 = new int[] { 0 };
+    try {
+      int _jspx_eval_form_select_2 = _jspx_th_form_select_2.doStartTag();
+      if (_jspx_eval_form_select_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\r\n");
+          out.write("        <option disabled selected value> - Start Day - </option>\r\n");
           out.write("        <option value=\"01\">1</option>\r\n");
           out.write("        <option value=\"02\">2</option>\r\n");
           out.write("        <option value=\"03\">3</option>\r\n");
@@ -272,45 +303,6 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
           out.write("        <option value=\"30\">30</option>\r\n");
           out.write("        <option value=\"31\">31</option>\r\n");
           out.write("    ");
-          int evalDoAfterBody = _jspx_th_form_select_1.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_form_select_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_form_select_1[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_form_select_1.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_form_select_1.doFinally();
-      _jspx_tagPool_form_select_path.reuse(_jspx_th_form_select_1);
-    }
-    return false;
-  }
-
-  private boolean _jspx_meth_form_select_2(javax.servlet.jsp.tagext.JspTag _jspx_th_form_form_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_form_form_0)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  form:select
-    org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_select_2 = (org.springframework.web.servlet.tags.form.SelectTag) _jspx_tagPool_form_select_path.get(org.springframework.web.servlet.tags.form.SelectTag.class);
-    _jspx_th_form_select_2.setPageContext(_jspx_page_context);
-    _jspx_th_form_select_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-    _jspx_th_form_select_2.setPath("year");
-    int[] _jspx_push_body_count_form_select_2 = new int[] { 0 };
-    try {
-      int _jspx_eval_form_select_2 = _jspx_th_form_select_2.doStartTag();
-      if (_jspx_eval_form_select_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("\r\n");
-          out.write("        <option disabled selected value> - Year - </option>\r\n");
-          out.write("        <option value=\"2016\">2016</option>\r\n");
-          out.write("        <option value=\"2017\">2017</option>\r\n");
-          out.write("        <option value=\"2018\">2018</option>\r\n");
-          out.write("    ");
           int evalDoAfterBody = _jspx_th_form_select_2.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -338,38 +330,45 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
     org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_select_3 = (org.springframework.web.servlet.tags.form.SelectTag) _jspx_tagPool_form_select_path.get(org.springframework.web.servlet.tags.form.SelectTag.class);
     _jspx_th_form_select_3.setPageContext(_jspx_page_context);
     _jspx_th_form_select_3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-    _jspx_th_form_select_3.setPath("startTime");
+    _jspx_th_form_select_3.setPath("endDay");
     int[] _jspx_push_body_count_form_select_3 = new int[] { 0 };
     try {
       int _jspx_eval_form_select_3 = _jspx_th_form_select_3.doStartTag();
       if (_jspx_eval_form_select_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("        <option disabled selected value> - Start Time - </option>\r\n");
-          out.write("        <option value = \"12:00\">12:00</option>\r\n");
-          out.write("        <option value = \"12:30\">12:30</option>\r\n");
-          out.write("        <option value = \"1:00\">1:00</option>\r\n");
-          out.write("        <option value = \"1:30\">1:30</option>\r\n");
-          out.write("        <option value = \"2:00\">2:00</option>\r\n");
-          out.write("        <option value = \"2:30\">2:30</option>\r\n");
-          out.write("        <option value = \"3:00\">3:00</option>\r\n");
-          out.write("        <option value = \"3:30\">3:30</option>\r\n");
-          out.write("        <option value = \"4:00\">4:00</option>\r\n");
-          out.write("        <option value = \"4:30\">4:30</option>\r\n");
-          out.write("        <option value = \"5:00\">5:00</option>\r\n");
-          out.write("        <option value = \"5:30\">5:30</option>\r\n");
-          out.write("        <option value = \"6:00\">6:00</option>\r\n");
-          out.write("        <option value = \"6:30\">6:30</option>\r\n");
-          out.write("        <option value = \"7:00\">7:00</option>\r\n");
-          out.write("        <option value = \"7:30\">7:30</option>\r\n");
-          out.write("        <option value = \"8:00\">8:00</option>\r\n");
-          out.write("        <option value = \"8:30\">8:30</option>\r\n");
-          out.write("        <option value = \"9:00\">9:00</option>\r\n");
-          out.write("        <option value = \"9:30\">9:30</option>\r\n");
-          out.write("        <option value = \"10:00\">10:00</option>\r\n");
-          out.write("        <option value = \"10:30\">10:30</option>\r\n");
-          out.write("        <option value = \"11:00\">11:00</option>\r\n");
-          out.write("        <option value = \"11:30\">11:30</option>\r\n");
+          out.write("        <option disabled selected value> - End Day - </option>\r\n");
+          out.write("        <option value=\"01\">1</option>\r\n");
+          out.write("        <option value=\"02\">2</option>\r\n");
+          out.write("        <option value=\"03\">3</option>\r\n");
+          out.write("        <option value=\"04\">4</option>\r\n");
+          out.write("        <option value=\"05\">5</option>\r\n");
+          out.write("        <option value=\"06\">6</option>\r\n");
+          out.write("        <option value=\"07\">7</option>\r\n");
+          out.write("        <option value=\"08\">8</option>\r\n");
+          out.write("        <option value=\"09\">9</option>\r\n");
+          out.write("        <option value=\"10\">10</option>\r\n");
+          out.write("        <option value=\"11\">11</option>\r\n");
+          out.write("        <option value=\"12\">12</option>\r\n");
+          out.write("        <option value=\"13\">13</option>\r\n");
+          out.write("        <option value=\"14\">14</option>\r\n");
+          out.write("        <option value=\"15\">15</option>\r\n");
+          out.write("        <option value=\"16\">16</option>\r\n");
+          out.write("        <option value=\"17\">17</option>\r\n");
+          out.write("        <option value=\"18\">18</option>\r\n");
+          out.write("        <option value=\"19\">19</option>\r\n");
+          out.write("        <option value=\"20\">20</option>\r\n");
+          out.write("        <option value=\"21\">21</option>\r\n");
+          out.write("        <option value=\"22\">22</option>\r\n");
+          out.write("        <option value=\"23\">23</option>\r\n");
+          out.write("        <option value=\"24\">24</option>\r\n");
+          out.write("        <option value=\"25\">25</option>\r\n");
+          out.write("        <option value=\"26\">26</option>\r\n");
+          out.write("        <option value=\"27\">27</option>\r\n");
+          out.write("        <option value=\"28\">28</option>\r\n");
+          out.write("        <option value=\"29\">29</option>\r\n");
+          out.write("        <option value=\"30\">30</option>\r\n");
+          out.write("        <option value=\"31\">31</option>\r\n");
           out.write("    ");
           int evalDoAfterBody = _jspx_th_form_select_3.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -398,16 +397,17 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
     org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_select_4 = (org.springframework.web.servlet.tags.form.SelectTag) _jspx_tagPool_form_select_path.get(org.springframework.web.servlet.tags.form.SelectTag.class);
     _jspx_th_form_select_4.setPageContext(_jspx_page_context);
     _jspx_th_form_select_4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-    _jspx_th_form_select_4.setPath("startTimePeriod");
+    _jspx_th_form_select_4.setPath("year");
     int[] _jspx_push_body_count_form_select_4 = new int[] { 0 };
     try {
       int _jspx_eval_form_select_4 = _jspx_th_form_select_4.doStartTag();
       if (_jspx_eval_form_select_4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("        <option disabled selected value></option>\r\n");
-          out.write("        <option value=\"AM\">AM</option>\r\n");
-          out.write("        <option value=\"PM\">PM</option>\r\n");
+          out.write("        <option disabled selected value> - Start Year - </option>\r\n");
+          out.write("        <option value=\"2016\">2016</option>\r\n");
+          out.write("        <option value=\"2017\">2017</option>\r\n");
+          out.write("        <option value=\"2018\">2018</option>\r\n");
           out.write("    ");
           int evalDoAfterBody = _jspx_th_form_select_4.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -436,38 +436,17 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
     org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_select_5 = (org.springframework.web.servlet.tags.form.SelectTag) _jspx_tagPool_form_select_path.get(org.springframework.web.servlet.tags.form.SelectTag.class);
     _jspx_th_form_select_5.setPageContext(_jspx_page_context);
     _jspx_th_form_select_5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-    _jspx_th_form_select_5.setPath("endTime");
+    _jspx_th_form_select_5.setPath("endYear");
     int[] _jspx_push_body_count_form_select_5 = new int[] { 0 };
     try {
       int _jspx_eval_form_select_5 = _jspx_th_form_select_5.doStartTag();
       if (_jspx_eval_form_select_5 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("        <option disabled selected value> - End Time - </option>\r\n");
-          out.write("        <option value = \"12:00\">12:00</option>\r\n");
-          out.write("        <option value = \"12:30\">12:30</option>\r\n");
-          out.write("        <option value = \"1:00\">1:00</option>\r\n");
-          out.write("        <option value = \"1:30\">1:30</option>\r\n");
-          out.write("        <option value = \"2:00\">2:00</option>\r\n");
-          out.write("        <option value = \"2:30\">2:30</option>\r\n");
-          out.write("        <option value = \"3:00\">3:00</option>\r\n");
-          out.write("        <option value = \"3:30\">3:30</option>\r\n");
-          out.write("        <option value = \"4:00\">4:00</option>\r\n");
-          out.write("        <option value = \"4:30\">4:30</option>\r\n");
-          out.write("        <option value = \"5:00\">5:00</option>\r\n");
-          out.write("        <option value = \"5:30\">5:30</option>\r\n");
-          out.write("        <option value = \"6:00\">6:00</option>\r\n");
-          out.write("        <option value = \"6:30\">6:30</option>\r\n");
-          out.write("        <option value = \"7:00\">7:00</option>\r\n");
-          out.write("        <option value = \"7:30\">7:30</option>\r\n");
-          out.write("        <option value = \"8:00\">8:00</option>\r\n");
-          out.write("        <option value = \"8:30\">8:30</option>\r\n");
-          out.write("        <option value = \"9:00\">9:00</option>\r\n");
-          out.write("        <option value = \"9:30\">9:30</option>\r\n");
-          out.write("        <option value = \"10:00\">10:00</option>\r\n");
-          out.write("        <option value = \"10:30\">10:30</option>\r\n");
-          out.write("        <option value = \"11:00\">11:00</option>\r\n");
-          out.write("        <option value = \"11:30\">11:30</option>\r\n");
+          out.write("        <option disabled selected value> - End Year - </option>\r\n");
+          out.write("        <option value=\"2016\">2016</option>\r\n");
+          out.write("        <option value=\"2017\">2017</option>\r\n");
+          out.write("        <option value=\"2018\">2018</option>\r\n");
           out.write("    ");
           int evalDoAfterBody = _jspx_th_form_select_5.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -484,70 +463,6 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
     } finally {
       _jspx_th_form_select_5.doFinally();
       _jspx_tagPool_form_select_path.reuse(_jspx_th_form_select_5);
-    }
-    return false;
-  }
-
-  private boolean _jspx_meth_form_select_6(javax.servlet.jsp.tagext.JspTag _jspx_th_form_form_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_form_form_0)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  form:select
-    org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_select_6 = (org.springframework.web.servlet.tags.form.SelectTag) _jspx_tagPool_form_select_path.get(org.springframework.web.servlet.tags.form.SelectTag.class);
-    _jspx_th_form_select_6.setPageContext(_jspx_page_context);
-    _jspx_th_form_select_6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-    _jspx_th_form_select_6.setPath("endTimePeriod");
-    int[] _jspx_push_body_count_form_select_6 = new int[] { 0 };
-    try {
-      int _jspx_eval_form_select_6 = _jspx_th_form_select_6.doStartTag();
-      if (_jspx_eval_form_select_6 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("\r\n");
-          out.write("        <option disabled selected value></option>\r\n");
-          out.write("        <option value=\"AM\">AM</option>\r\n");
-          out.write("        <option value=\"PM\">PM</option>\r\n");
-          out.write("    ");
-          int evalDoAfterBody = _jspx_th_form_select_6.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_form_select_6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_form_select_6[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_form_select_6.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_form_select_6.doFinally();
-      _jspx_tagPool_form_select_path.reuse(_jspx_th_form_select_6);
-    }
-    return false;
-  }
-
-  private boolean _jspx_meth_form_input_0(javax.servlet.jsp.tagext.JspTag _jspx_th_form_form_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_form_form_0)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  form:input
-    org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_input_0 = (org.springframework.web.servlet.tags.form.InputTag) _jspx_tagPool_form_input_path_nobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
-    _jspx_th_form_input_0.setPageContext(_jspx_page_context);
-    _jspx_th_form_input_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-    _jspx_th_form_input_0.setPath("purpose");
-    int[] _jspx_push_body_count_form_input_0 = new int[] { 0 };
-    try {
-      int _jspx_eval_form_input_0 = _jspx_th_form_input_0.doStartTag();
-      if (_jspx_th_form_input_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_form_input_0[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_form_input_0.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_form_input_0.doFinally();
-      _jspx_tagPool_form_input_path_nobody.reuse(_jspx_th_form_input_0);
     }
     return false;
   }

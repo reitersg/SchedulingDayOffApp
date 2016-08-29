@@ -21,7 +21,7 @@
     <form:select path="month">
         <option disabled selected value> - Month - </option>
         <option value="01">January</option>
-        <option value="02">Febuary</option>
+        <option value="02">February</option>
         <option value="03">March</option>
         <option value="04">April</option>
         <option value="05">May</option>
@@ -85,7 +85,13 @@
 </form:form>
 <br>
 <br>
-<a href = "/web/daysOffList.html">Click here to view your days off</a>
+Days Off: ${Dates}
+<br>
+<br>
+Purposes: ${Purposes}
+<br>
+<br>
+Times: ${Times}
 <br>
 <br>
 <a href ="http://localhost:9090">Return to Home Page</a>

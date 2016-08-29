@@ -75,7 +75,14 @@ public final class deletedaysoff_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\r\n");
       out.write("<br>\r\n");
       out.write("<br>\r\n");
-      out.write("<a href = \"/web/daysOffList.html\">Click here to view your days off</a>\r\n");
+      out.write("Days Off: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${Dates}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\r\n");
+      out.write("<br>\r\n");
+      out.write("<br>\r\n");
+      out.write("Purposes: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${Purposes}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\r\n");
       out.write("<br>\r\n");
       out.write("<br>\r\n");
       out.write("<a href =\"http://localhost:9090\">Return to Home Page</a>\r\n");
@@ -171,7 +178,7 @@ public final class deletedaysoff_jsp extends org.apache.jasper.runtime.HttpJspBa
           out.write("\r\n");
           out.write("        <option disabled selected value> - Month - </option>\r\n");
           out.write("        <option value=\"01\">January</option>\r\n");
-          out.write("        <option value=\"02\">Febuary</option>\r\n");
+          out.write("        <option value=\"02\">February</option>\r\n");
           out.write("        <option value=\"03\">March</option>\r\n");
           out.write("        <option value=\"04\">April</option>\r\n");
           out.write("        <option value=\"05\">May</option>\r\n");

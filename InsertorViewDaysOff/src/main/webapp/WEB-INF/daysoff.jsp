@@ -20,7 +20,7 @@
     <form:select path="month">
         <option disabled selected value> - Month - </option>
         <option value="01">January</option>
-        <option value="02">Febuary</option>
+        <option value="02">February</option>
         <option value="03">March</option>
         <option value="04">April</option>
         <option value="05">May</option>

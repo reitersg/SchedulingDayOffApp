@@ -3,8 +3,13 @@ package org.cubrc.example;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import sun.util.resources.cldr.ak.CalendarData_ak_GH;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by reitersg on 7/22/2016.
@@ -110,5 +115,18 @@ public class DaysOffParser {
             sb.append(bindings.get(bindings.size() - 1).get("vacation").get("value").asText());
             return sb;
         }
+    }
+    public static int daysLeft(StringBuilder sb){
+        List<String> list = Arrays.asList(sb.toString().split("\\s*,\\s*"));
+        ArrayList<Integer> days = new ArrayList<Integer>();
+        Calendar cal = Calendar.getInstance();
+        int currentDay = cal.get(Calendar.DAY_OF_WEEK);
+        for (int i = 0; i < list.size(); i++){
+            Integer month = Integer.parseInt(list.get(i).substring(5, 7));
+            Integer day = Integer.parseInt(list.get(i).substring(7, 9));
+
+        }
+
+    return 0;
     }
 }

@@ -19,7 +19,7 @@
     <form:select path="month">
         <option disabled selected value> - Start Month - </option>
         <option value="01">January</option>
-        <option value="02">Febuary</option>
+        <option value="02">February</option>
         <option value="03">March</option>
         <option value="04">April</option>
         <option value="05">May</option>
@@ -34,7 +34,7 @@
     <form:select path="endMonth">
         <option disabled selected value> - End Month - </option>
         <option value="01">January</option>
-        <option value="02">Febuary</option>
+        <option value="02">February</option>
         <option value="03">March</option>
         <option value="04">April</option>
         <option value="05">May</option>
@@ -134,6 +134,9 @@
     <br>
     <input type="submit" value="Submit Date">
 </form:form>
+<br>
+<br>
+Vacations: ${vacations}
 <br>
 <br>
 <a href ="http://localhost:9090">Return to Home Page</a>

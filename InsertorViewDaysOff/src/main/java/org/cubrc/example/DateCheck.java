@@ -38,12 +38,7 @@ public class DateCheck {
         StringBuilder sb = DaysOffParser.parseVacation(vacations);
         return sb.toString().contains(vacation);
     }
-    public static boolean checkTimeAlreadyExists(String time) throws IOException{
-        Query query = new Query();
-        String times = query.selectTime();
-        StringBuilder sb = DaysOffParser.parseTime(times);
-        return sb.toString().contains(time);
-    }
+
     public static boolean checkSameDate(Date date) {
         if (date.getDay().equals(date.getEndDay()) && date.getEndMonth().equals(date.getMonth()) && date.getEndYear().equals(date.getYear())){
             return true;

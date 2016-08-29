@@ -171,7 +171,7 @@ public final class vacation_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\r\n");
           out.write("        <option disabled selected value> - Start Month - </option>\r\n");
           out.write("        <option value=\"01\">January</option>\r\n");
-          out.write("        <option value=\"02\">Febuary</option>\r\n");
+          out.write("        <option value=\"02\">February</option>\r\n");
           out.write("        <option value=\"03\">March</option>\r\n");
           out.write("        <option value=\"04\">April</option>\r\n");
           out.write("        <option value=\"05\">May</option>\r\n");
@@ -219,7 +219,7 @@ public final class vacation_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\r\n");
           out.write("        <option disabled selected value> - End Month - </option>\r\n");
           out.write("        <option value=\"01\">January</option>\r\n");
-          out.write("        <option value=\"02\">Febuary</option>\r\n");
+          out.write("        <option value=\"02\">February</option>\r\n");
           out.write("        <option value=\"03\">March</option>\r\n");
           out.write("        <option value=\"04\">April</option>\r\n");
           out.write("        <option value=\"05\">May</option>\r\n");

@@ -89,6 +89,12 @@ public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <br>\r\n");
       out.write("    <br>\r\n");
       out.write("    <a href = \"/web/deletedaysoffperiod.html\">Click to delete another time period</a>\r\n");
+      out.write("    <br>\r\n");
+      out.write("    <br>\r\n");
+      out.write("    <a href=\"/web/vacation.html\">Click here to submit a vacation</a>\r\n");
+      out.write("<br>\r\n");
+      out.write("<br>\r\n");
+      out.write("<a href = \"/web/deletevacation.html\">Click here to delete a vacation</a>\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

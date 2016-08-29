@@ -13,7 +13,6 @@ public final class deletedaysoffperiod_jsp extends org.apache.jasper.runtime.Htt
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_form_input_path_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_form_form_method_commandName_action;
-  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_sf_errors_path_cssClass_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_form_select_path;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
@@ -25,14 +24,12 @@ public final class deletedaysoffperiod_jsp extends org.apache.jasper.runtime.Htt
   public void _jspInit() {
     _jspx_tagPool_form_input_path_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_form_form_method_commandName_action = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _jspx_tagPool_sf_errors_path_cssClass_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_form_select_path = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
     _jspx_tagPool_form_input_path_nobody.release();
     _jspx_tagPool_form_form_method_commandName_action.release();
-    _jspx_tagPool_sf_errors_path_cssClass_nobody.release();
     _jspx_tagPool_form_select_path.release();
   }
 
@@ -73,259 +70,24 @@ public final class deletedaysoffperiod_jsp extends org.apache.jasper.runtime.Htt
       out.write("<h1>\r\n");
       out.write("    Time Off\r\n");
       out.write("</h1>\r\n");
-      //  form:form
-      org.springframework.web.servlet.tags.form.FormTag _jspx_th_form_form_0 = (org.springframework.web.servlet.tags.form.FormTag) _jspx_tagPool_form_form_method_commandName_action.get(org.springframework.web.servlet.tags.form.FormTag.class);
-      _jspx_th_form_form_0.setPageContext(_jspx_page_context);
-      _jspx_th_form_form_0.setParent(null);
-      _jspx_th_form_form_0.setMethod("POST");
-      _jspx_th_form_form_0.setAction("/web/deleteTimePeriod");
-      _jspx_th_form_form_0.setCommandName("Date");
-      int[] _jspx_push_body_count_form_form_0 = new int[] { 0 };
-      try {
-        int _jspx_eval_form_form_0 = _jspx_th_form_form_0.doStartTag();
-        if (_jspx_eval_form_form_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-          do {
-            out.write("\r\n");
-            out.write("    ");
-            if (_jspx_meth_form_select_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
-              return;
-            out.write("\r\n");
-            out.write("    ");
-            //  sf:errors
-            org.springframework.web.servlet.tags.form.ErrorsTag _jspx_th_sf_errors_0 = (org.springframework.web.servlet.tags.form.ErrorsTag) _jspx_tagPool_sf_errors_path_cssClass_nobody.get(org.springframework.web.servlet.tags.form.ErrorsTag.class);
-            _jspx_th_sf_errors_0.setPageContext(_jspx_page_context);
-            _jspx_th_sf_errors_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-            _jspx_th_sf_errors_0.setPath("month");
-            _jspx_th_sf_errors_0.setCssClass("errors");
-            int[] _jspx_push_body_count_sf_errors_0 = new int[] { 0 };
-            try {
-              int _jspx_eval_sf_errors_0 = _jspx_th_sf_errors_0.doStartTag();
-              if (_jspx_th_sf_errors_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-                return;
-              }
-            } catch (Throwable _jspx_exception) {
-              while (_jspx_push_body_count_sf_errors_0[0]-- > 0)
-                out = _jspx_page_context.popBody();
-              _jspx_th_sf_errors_0.doCatch(_jspx_exception);
-            } finally {
-              _jspx_th_sf_errors_0.doFinally();
-              _jspx_tagPool_sf_errors_path_cssClass_nobody.reuse(_jspx_th_sf_errors_0);
-            }
-            out.write("\r\n");
-            out.write("    <br>\r\n");
-            out.write("    <br>\r\n");
-            out.write("    ");
-            if (_jspx_meth_form_select_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
-              return;
-            out.write("\r\n");
-            out.write("    ");
-            //  sf:errors
-            org.springframework.web.servlet.tags.form.ErrorsTag _jspx_th_sf_errors_1 = (org.springframework.web.servlet.tags.form.ErrorsTag) _jspx_tagPool_sf_errors_path_cssClass_nobody.get(org.springframework.web.servlet.tags.form.ErrorsTag.class);
-            _jspx_th_sf_errors_1.setPageContext(_jspx_page_context);
-            _jspx_th_sf_errors_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-            _jspx_th_sf_errors_1.setPath("day");
-            _jspx_th_sf_errors_1.setCssClass("errors");
-            int[] _jspx_push_body_count_sf_errors_1 = new int[] { 0 };
-            try {
-              int _jspx_eval_sf_errors_1 = _jspx_th_sf_errors_1.doStartTag();
-              if (_jspx_th_sf_errors_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-                return;
-              }
-            } catch (Throwable _jspx_exception) {
-              while (_jspx_push_body_count_sf_errors_1[0]-- > 0)
-                out = _jspx_page_context.popBody();
-              _jspx_th_sf_errors_1.doCatch(_jspx_exception);
-            } finally {
-              _jspx_th_sf_errors_1.doFinally();
-              _jspx_tagPool_sf_errors_path_cssClass_nobody.reuse(_jspx_th_sf_errors_1);
-            }
-            out.write("\r\n");
-            out.write("    <br>\r\n");
-            out.write("    <br>\r\n");
-            out.write("    ");
-            if (_jspx_meth_form_select_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
-              return;
-            out.write("\r\n");
-            out.write("    ");
-            //  sf:errors
-            org.springframework.web.servlet.tags.form.ErrorsTag _jspx_th_sf_errors_2 = (org.springframework.web.servlet.tags.form.ErrorsTag) _jspx_tagPool_sf_errors_path_cssClass_nobody.get(org.springframework.web.servlet.tags.form.ErrorsTag.class);
-            _jspx_th_sf_errors_2.setPageContext(_jspx_page_context);
-            _jspx_th_sf_errors_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-            _jspx_th_sf_errors_2.setPath("year");
-            _jspx_th_sf_errors_2.setCssClass("errors");
-            int[] _jspx_push_body_count_sf_errors_2 = new int[] { 0 };
-            try {
-              int _jspx_eval_sf_errors_2 = _jspx_th_sf_errors_2.doStartTag();
-              if (_jspx_th_sf_errors_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-                return;
-              }
-            } catch (Throwable _jspx_exception) {
-              while (_jspx_push_body_count_sf_errors_2[0]-- > 0)
-                out = _jspx_page_context.popBody();
-              _jspx_th_sf_errors_2.doCatch(_jspx_exception);
-            } finally {
-              _jspx_th_sf_errors_2.doFinally();
-              _jspx_tagPool_sf_errors_path_cssClass_nobody.reuse(_jspx_th_sf_errors_2);
-            }
-            out.write("\r\n");
-            out.write("    <br>\r\n");
-            out.write("    <br>\r\n");
-            out.write("    ");
-            if (_jspx_meth_form_select_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
-              return;
-            out.write("\r\n");
-            out.write("    ");
-            //  sf:errors
-            org.springframework.web.servlet.tags.form.ErrorsTag _jspx_th_sf_errors_3 = (org.springframework.web.servlet.tags.form.ErrorsTag) _jspx_tagPool_sf_errors_path_cssClass_nobody.get(org.springframework.web.servlet.tags.form.ErrorsTag.class);
-            _jspx_th_sf_errors_3.setPageContext(_jspx_page_context);
-            _jspx_th_sf_errors_3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-            _jspx_th_sf_errors_3.setPath("startTime");
-            _jspx_th_sf_errors_3.setCssClass("errors");
-            int[] _jspx_push_body_count_sf_errors_3 = new int[] { 0 };
-            try {
-              int _jspx_eval_sf_errors_3 = _jspx_th_sf_errors_3.doStartTag();
-              if (_jspx_th_sf_errors_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-                return;
-              }
-            } catch (Throwable _jspx_exception) {
-              while (_jspx_push_body_count_sf_errors_3[0]-- > 0)
-                out = _jspx_page_context.popBody();
-              _jspx_th_sf_errors_3.doCatch(_jspx_exception);
-            } finally {
-              _jspx_th_sf_errors_3.doFinally();
-              _jspx_tagPool_sf_errors_path_cssClass_nobody.reuse(_jspx_th_sf_errors_3);
-            }
-            out.write("\r\n");
-            out.write("    ");
-            if (_jspx_meth_form_select_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
-              return;
-            out.write("\r\n");
-            out.write("    ");
-            //  sf:errors
-            org.springframework.web.servlet.tags.form.ErrorsTag _jspx_th_sf_errors_4 = (org.springframework.web.servlet.tags.form.ErrorsTag) _jspx_tagPool_sf_errors_path_cssClass_nobody.get(org.springframework.web.servlet.tags.form.ErrorsTag.class);
-            _jspx_th_sf_errors_4.setPageContext(_jspx_page_context);
-            _jspx_th_sf_errors_4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-            _jspx_th_sf_errors_4.setPath("startTimePeriod");
-            _jspx_th_sf_errors_4.setCssClass("errors");
-            int[] _jspx_push_body_count_sf_errors_4 = new int[] { 0 };
-            try {
-              int _jspx_eval_sf_errors_4 = _jspx_th_sf_errors_4.doStartTag();
-              if (_jspx_th_sf_errors_4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-                return;
-              }
-            } catch (Throwable _jspx_exception) {
-              while (_jspx_push_body_count_sf_errors_4[0]-- > 0)
-                out = _jspx_page_context.popBody();
-              _jspx_th_sf_errors_4.doCatch(_jspx_exception);
-            } finally {
-              _jspx_th_sf_errors_4.doFinally();
-              _jspx_tagPool_sf_errors_path_cssClass_nobody.reuse(_jspx_th_sf_errors_4);
-            }
-            out.write("\r\n");
-            out.write("    <br>\r\n");
-            out.write("    <br>\r\n");
-            out.write("    ");
-            if (_jspx_meth_form_select_5((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
-              return;
-            out.write("\r\n");
-            out.write("    ");
-            //  sf:errors
-            org.springframework.web.servlet.tags.form.ErrorsTag _jspx_th_sf_errors_5 = (org.springframework.web.servlet.tags.form.ErrorsTag) _jspx_tagPool_sf_errors_path_cssClass_nobody.get(org.springframework.web.servlet.tags.form.ErrorsTag.class);
-            _jspx_th_sf_errors_5.setPageContext(_jspx_page_context);
-            _jspx_th_sf_errors_5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-            _jspx_th_sf_errors_5.setPath("endTime");
-            _jspx_th_sf_errors_5.setCssClass("errors");
-            int[] _jspx_push_body_count_sf_errors_5 = new int[] { 0 };
-            try {
-              int _jspx_eval_sf_errors_5 = _jspx_th_sf_errors_5.doStartTag();
-              if (_jspx_th_sf_errors_5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-                return;
-              }
-            } catch (Throwable _jspx_exception) {
-              while (_jspx_push_body_count_sf_errors_5[0]-- > 0)
-                out = _jspx_page_context.popBody();
-              _jspx_th_sf_errors_5.doCatch(_jspx_exception);
-            } finally {
-              _jspx_th_sf_errors_5.doFinally();
-              _jspx_tagPool_sf_errors_path_cssClass_nobody.reuse(_jspx_th_sf_errors_5);
-            }
-            out.write("\r\n");
-            out.write("    ");
-            if (_jspx_meth_form_select_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
-              return;
-            out.write("\r\n");
-            out.write("    ");
-            //  sf:errors
-            org.springframework.web.servlet.tags.form.ErrorsTag _jspx_th_sf_errors_6 = (org.springframework.web.servlet.tags.form.ErrorsTag) _jspx_tagPool_sf_errors_path_cssClass_nobody.get(org.springframework.web.servlet.tags.form.ErrorsTag.class);
-            _jspx_th_sf_errors_6.setPageContext(_jspx_page_context);
-            _jspx_th_sf_errors_6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-            _jspx_th_sf_errors_6.setPath("endTimePeriod");
-            _jspx_th_sf_errors_6.setCssClass("errors");
-            int[] _jspx_push_body_count_sf_errors_6 = new int[] { 0 };
-            try {
-              int _jspx_eval_sf_errors_6 = _jspx_th_sf_errors_6.doStartTag();
-              if (_jspx_th_sf_errors_6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-                return;
-              }
-            } catch (Throwable _jspx_exception) {
-              while (_jspx_push_body_count_sf_errors_6[0]-- > 0)
-                out = _jspx_page_context.popBody();
-              _jspx_th_sf_errors_6.doCatch(_jspx_exception);
-            } finally {
-              _jspx_th_sf_errors_6.doFinally();
-              _jspx_tagPool_sf_errors_path_cssClass_nobody.reuse(_jspx_th_sf_errors_6);
-            }
-            out.write("\r\n");
-            out.write("    <br>\r\n");
-            out.write("    <br>\r\n");
-            out.write("    <label>Purpose for time off</label>\r\n");
-            out.write("    ");
-            if (_jspx_meth_form_input_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
-              return;
-            out.write("\r\n");
-            out.write("    ");
-            //  sf:errors
-            org.springframework.web.servlet.tags.form.ErrorsTag _jspx_th_sf_errors_7 = (org.springframework.web.servlet.tags.form.ErrorsTag) _jspx_tagPool_sf_errors_path_cssClass_nobody.get(org.springframework.web.servlet.tags.form.ErrorsTag.class);
-            _jspx_th_sf_errors_7.setPageContext(_jspx_page_context);
-            _jspx_th_sf_errors_7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-            _jspx_th_sf_errors_7.setPath("purpose");
-            _jspx_th_sf_errors_7.setCssClass("errors");
-            int[] _jspx_push_body_count_sf_errors_7 = new int[] { 0 };
-            try {
-              int _jspx_eval_sf_errors_7 = _jspx_th_sf_errors_7.doStartTag();
-              if (_jspx_th_sf_errors_7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-                return;
-              }
-            } catch (Throwable _jspx_exception) {
-              while (_jspx_push_body_count_sf_errors_7[0]-- > 0)
-                out = _jspx_page_context.popBody();
-              _jspx_th_sf_errors_7.doCatch(_jspx_exception);
-            } finally {
-              _jspx_th_sf_errors_7.doFinally();
-              _jspx_tagPool_sf_errors_path_cssClass_nobody.reuse(_jspx_th_sf_errors_7);
-            }
-            out.write("\r\n");
-            out.write("    <input type=\"submit\" value=\"Submit Date\">\r\n");
-            int evalDoAfterBody = _jspx_th_form_form_0.doAfterBody();
-            if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-              break;
-          } while (true);
-        }
-        if (_jspx_th_form_form_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-          return;
-        }
-      } catch (Throwable _jspx_exception) {
-        while (_jspx_push_body_count_form_form_0[0]-- > 0)
-          out = _jspx_page_context.popBody();
-        _jspx_th_form_form_0.doCatch(_jspx_exception);
-      } finally {
-        _jspx_th_form_form_0.doFinally();
-        _jspx_tagPool_form_form_method_commandName_action.reuse(_jspx_th_form_form_0);
-      }
+      if (_jspx_meth_form_form_0(_jspx_page_context))
+        return;
       out.write("\r\n");
       out.write("<br>\r\n");
       out.write("<br>\r\n");
-      out.write("<a href = \"/web/daysOffList.html\">Click here to view your time periods</a>\r\n");
+      out.write("Days Off: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${Dates}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\r\n");
+      out.write("<br>\r\n");
+      out.write("<br>\r\n");
+      out.write("Purposes: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${Purposes}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\r\n");
+      out.write("<br>\r\n");
+      out.write("<br>\r\n");
+      out.write("Times: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${Times}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\r\n");
       out.write("<br>\r\n");
       out.write("<br>\r\n");
       out.write("<a href =\"http://localhost:9090\">Return to Home Page</a>\r\n");
@@ -342,6 +104,86 @@ public final class deletedaysoffperiod_jsp extends org.apache.jasper.runtime.Htt
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
+  }
+
+  private boolean _jspx_meth_form_form_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  form:form
+    org.springframework.web.servlet.tags.form.FormTag _jspx_th_form_form_0 = (org.springframework.web.servlet.tags.form.FormTag) _jspx_tagPool_form_form_method_commandName_action.get(org.springframework.web.servlet.tags.form.FormTag.class);
+    _jspx_th_form_form_0.setPageContext(_jspx_page_context);
+    _jspx_th_form_form_0.setParent(null);
+    _jspx_th_form_form_0.setMethod("POST");
+    _jspx_th_form_form_0.setAction("/web/deleteTimePeriod");
+    _jspx_th_form_form_0.setCommandName("Date");
+    int[] _jspx_push_body_count_form_form_0 = new int[] { 0 };
+    try {
+      int _jspx_eval_form_form_0 = _jspx_th_form_form_0.doStartTag();
+      if (_jspx_eval_form_form_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\r\n");
+          out.write("    ");
+          if (_jspx_meth_form_select_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
+            return true;
+          out.write("\r\n");
+          out.write("    <br>\r\n");
+          out.write("    <br>\r\n");
+          out.write("    ");
+          if (_jspx_meth_form_select_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
+            return true;
+          out.write("\r\n");
+          out.write("    <br>\r\n");
+          out.write("    <br>\r\n");
+          out.write("    ");
+          if (_jspx_meth_form_select_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
+            return true;
+          out.write("\r\n");
+          out.write("    <br>\r\n");
+          out.write("    <br>\r\n");
+          out.write("    ");
+          if (_jspx_meth_form_select_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
+            return true;
+          out.write("\r\n");
+          out.write("    ");
+          if (_jspx_meth_form_select_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
+            return true;
+          out.write("\r\n");
+          out.write("    <br>\r\n");
+          out.write("    <br>\r\n");
+          out.write("    ");
+          if (_jspx_meth_form_select_5((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
+            return true;
+          out.write("\r\n");
+          out.write("    ");
+          if (_jspx_meth_form_select_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
+            return true;
+          out.write("\r\n");
+          out.write("    <br>\r\n");
+          out.write("    <br>\r\n");
+          out.write("    <label>Purpose for time off</label>\r\n");
+          out.write("    ");
+          if (_jspx_meth_form_input_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
+            return true;
+          out.write("\r\n");
+          out.write("    <input type=\"submit\" value=\"Submit Date\">\r\n");
+          int evalDoAfterBody = _jspx_th_form_form_0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_form_form_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_form_form_0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_form_form_0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_form_form_0.doFinally();
+      _jspx_tagPool_form_form_method_commandName_action.reuse(_jspx_th_form_form_0);
+    }
+    return false;
   }
 
   private boolean _jspx_meth_form_select_0(javax.servlet.jsp.tagext.JspTag _jspx_th_form_form_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_form_form_0)
@@ -361,7 +203,7 @@ public final class deletedaysoffperiod_jsp extends org.apache.jasper.runtime.Htt
           out.write("\r\n");
           out.write("        <option disabled selected value> - Month - </option>\r\n");
           out.write("        <option value=\"01\">January</option>\r\n");
-          out.write("        <option value=\"02\">Febuary</option>\r\n");
+          out.write("        <option value=\"02\">February</option>\r\n");
           out.write("        <option value=\"03\">March</option>\r\n");
           out.write("        <option value=\"04\">April</option>\r\n");
           out.write("        <option value=\"05\">May</option>\r\n");
