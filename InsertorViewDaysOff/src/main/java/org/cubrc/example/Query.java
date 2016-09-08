@@ -57,8 +57,8 @@ public class Query {
         RestClient client = new RestClient();
         client.setServerToQuery();
         String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
-                "PREFIX to: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
-                "select ?vacation where { to:Vacation ero:has_text_value ?vacation } ";
+                "PREFIX ex: <http://www.example.ex/ontologyinstances#>" +
+                "select ?vacation where { ex:Vacation ero:has_text_value ?vacation } ";
         String response = client.post("", query);
         return response;
     }

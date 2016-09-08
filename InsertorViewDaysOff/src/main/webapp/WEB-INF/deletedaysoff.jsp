@@ -91,9 +91,6 @@ Days Off: ${Dates}
 Purposes: ${Purposes}
 <br>
 <br>
-Times: ${Times}
-<br>
-<br>
 <a href ="http://localhost:9090">Return to Home Page</a>
 </body>
 </html>

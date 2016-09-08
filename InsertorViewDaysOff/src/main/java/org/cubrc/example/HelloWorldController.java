@@ -57,7 +57,6 @@ public class HelloWorldController {
 		ModelAndView model = new ModelAndView("deletedaysoff", "Date", new Date());
 		model.addObject("Dates", sb.toString());
 		model.addObject("Purposes", purpose.toString());
-		model.addObject("Times", time.toString());
 		return model;
 	}
 
@@ -154,6 +153,7 @@ public class HelloWorldController {
 				model.addAttribute("times", time.toString());
 				String vacations = query.selectVacation();
 				StringBuilder vacation = DaysOffParser.parseVacation(vacations);
+				System.out.print(vacation.toString());
 				model.addAttribute("vacations", vacation.toString());
 				return "result";
 			}
@@ -219,8 +219,8 @@ public class HelloWorldController {
 		String times = query.selectTime();
 		String vacations = query.selectVacation();
 		StringBuilder sb = DaysOffParser.parseDate(dates);
-		Calendar cal = Calendar.getInstance(TimeZone.getDefault());
-		System.out.print(cal.get(Calendar.DATE));
+//		Calendar cal = Calendar.getInstance(TimeZone.getDefault());
+//		System.out.print(cal.get(Calendar.DATE));
 //		int day = DaysOffParser.daysLeft(sb);
 		StringBuilder purpose = DaysOffParser.parsePurpose(purposes);
 		StringBuilder time = DaysOffParser.parseTime(times);
