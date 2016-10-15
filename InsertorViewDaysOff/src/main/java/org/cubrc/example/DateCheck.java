@@ -1,5 +1,6 @@
 package org.cubrc.example;
 import java.io.IOException;
+import java.util.Calendar;
 
 /**
  * Created by reitersg on 8/3/2016.
@@ -39,33 +40,33 @@ public class DateCheck {
         return sb.toString().contains(vacation);
     }
 
-    public static boolean checkSameDate(Date date) {
-        if (date.getDay().equals(date.getEndDay()) && date.getEndMonth().equals(date.getMonth()) && date.getEndYear().equals(date.getYear())){
+    public static boolean checkSameDate(Vacation vacation) {
+        if (vacation.getDay().equals(vacation.getEndDay()) && vacation.getEndMonth().equals(vacation.getMonth()) && vacation.getEndYear().equals(vacation.getYear())){
             return true;
         } else {
             return false;
         }
     }
-    public static boolean checkDayOffEmpty(Date date){
-        if (date.getMonth().equals("") || date.getDay().equals("") || date.getYear().equals("") || date.getPurpose().equals("")){
+    public static boolean checkDate(Date date) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.HOUR_OF_DAY, 0);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.MILLISECOND, 0);
+        java.util.Date today = c.getTime();
+
+        c.set(Calendar.YEAR, Integer.parseInt(date.getYear()));
+        c.set(Calendar.MONTH, Integer.parseInt(date.getMonth()));
+        c.set(Calendar.DAY_OF_MONTH, Integer.parseInt(date.getDay()));
+
+        java.util.Date eventDate = c.getTime();
+        if (eventDate.after(today)){
             return true;
         } else {
             return false;
         }
     }
-    public static boolean checkTimePeriodEmpty(Date date){
-        if (date.getMonth().equals("") || date.getDay().equals("") || date.getYear().equals("") || date.getPurpose().equals("") || date.getStartTime().equals("") ||
-                date.getStartTimePeriod().equals("") || date.getEndTime().equals("") || date.getEndTimePeriod().equals("")){
-            return true;
-        } else {
-            return false;
-        }
-    }
-    public static boolean checkVacationEmpty(Date date){
-        if (date.getMonth().equals("") || date.getDay().equals("") || date.getYear().equals("") || date.getEndDay().equals("") || date.getEndMonth().equals("") || date.getEndYear().equals("")){
-            return true;
-        } else {
-            return false;
-        }
-    }
+
+
+
 }

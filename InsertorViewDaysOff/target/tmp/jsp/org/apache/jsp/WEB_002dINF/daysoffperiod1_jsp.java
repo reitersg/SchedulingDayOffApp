@@ -106,7 +106,7 @@ public final class daysoffperiod1_jsp extends org.apache.jasper.runtime.HttpJspB
     _jspx_th_form_form_0.setParent(null);
     _jspx_th_form_form_0.setMethod("POST");
     _jspx_th_form_form_0.setAction("/web/addTimePeriod2");
-    _jspx_th_form_form_0.setCommandName("Date");
+    _jspx_th_form_form_0.setCommandName("Time");
     int[] _jspx_push_body_count_form_form_0 = new int[] { 0 };
     try {
       int _jspx_eval_form_form_0 = _jspx_th_form_form_0.doStartTag();

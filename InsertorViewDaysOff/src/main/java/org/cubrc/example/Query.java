@@ -11,45 +11,93 @@ import org.json.JSONObject;
  */
 public class Query {
 
-    public void insertDate(String date){
+
+    public void insertDate(Date date){
         RestClient client  = new RestClient();
         client.setServerToUpdate();
-        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>"
-                + "PREFIX to: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>"
-                +"insert data { to:DateTime ero:has_text_value"+ date + "}";
+        System.out.println(date.toString());
+        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#> \n"+
+                "PREFIX time: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#> \n" +
+                "PREFIX agent: <http://www.ontologylibrary.mil/CommonCore/Mid/AgentOntology#> \n" +
+                "PREFIX info: <http://www.ontologylibrary.mil/CommonCore/Mid/InformationEntityOntology#> \n" +
+                "insert data { \n" +
+                "ex:DayOff rdf:type event:Act .\n" +
+                "ex:DayOff ero:occurs_on ex:DateDay , \n" +
+                "ex:DateMonth , \n" +
+                "ex:DateYear ; \n" +
+                "ex:DayOff info:prescribes ex:DateObjective" +
+                "ex:DateDay rdf:type time:Day .\n" +
+                "ex:DateDay ero:designator_annotation " + "\"" + date.getDay()+ "\"" + ".\n" +
+                "ex:DateMonth rdf:type time:Month .\n" +
+                "ex:DateMonth ero:designator_annotation " + "\"" + date.getMonth()+ "\"" + ".\n" +
+                "ex:DateYear rdf:type time:Year .\n" +
+                "ex:DateYear ero:designator_annotation " + "\"" + date.getYear()+ "\"" + ".\n" +
+                "ex:DateObjective rdf:type agent:Objective .\n" +
+                "ex:DateObjective info:prescribes " + "\"" + date.getPurpose() + "\"" + ".\n" +
+                " } ";
         client.post("", query);
     }
-    public void insertVacation(Date date){
+    public void insertVacation(Vacation vacation){
         RestClient client = new RestClient();
         client.setServerToUpdate();
-        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
-                "PREFIX ex: <http://www.example.ex/ontologyinstances#>"+
-                "insert data {ex:Vacation ero:has_text_value" + "\"" + date.toString() + " - " + date.toStringEnd() + "\""
+        String query = "PREFIX time: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
+                "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
+                "insert data { \n" +
+                ":Vacation rdf:type time:MultiDayTemporalIdentifier .\n" +
+                ":Vacation ero:occurs_on" + "\"" + vacation.toString() + " - " + vacation.toStringEnd() + "\""
                 + "}";
         client.post("", query);
     }
-    public void insertPurpose(String purpose){
+
+    public void insertTime(Time time){
         RestClient client = new RestClient();
         client.setServerToUpdate();
-        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>"+
-                        "PREFIX ex: <http://www.example.ex/ontologyinstances#>"+
-                "insert data {ex:Purpose ero:has_text_value" + "\"" + purpose + "\"" + "}";
-        client.post("", query);
-    }
-    public void insertTime(String time){
-        RestClient client = new RestClient();
-        client.setServerToUpdate();
-        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>"+
-                "PREFIX to: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>"+
-                "insert data {to:TimeOfDay ero:has_text_value" + time + "}";
+        String query  = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>"+
+                "PREFIX time: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
+                "PREFIX agent: <http://www.ontologylibrary.mil/CommonCore/Mid/AgentOntology#>" +
+                "PREFIX info: <http://www.ontologylibrary.mil/CommonCore/Mid/InformationEntityOntology#>" +
+                "insert data { \n" +
+                "ex:TimeOff rdf:type event:Act .\n" +
+                "ex:TimeOff ero:occurs_on ex:TimeDay , \n" +
+                "ex:TimeMonth , \n" +
+                "ex:TimeYear , \n" +
+                "ex:TimeTime ;" +
+                "ex:TimeOff info:prescribes ex:TimeObjective" +
+                "ex:TimeDay rdf:type time:Day .\n" +
+                "ex:TimeDay ero:designator_annotation " + "\"" + time.getDay()+ "\"" + ".\n" +
+                "ex:TimeMonth rdf:type time:Month .\n" +
+                "ex:TimeMonth ero:designator_annotation " + "\"" + time.getMonth()+ "\"" + ".\n" +
+                "ex:TimeYear rdf:type time:Year" +
+                "ex:TimeYear ero:designator_annotation " + "\"" + time.getYear()+ "\"" + ".\n" +
+                "ex:TimeTime rdf:type time:MultiHourTemporalIdentifier . \n" +
+                "ex:TimeTime ero:designator_annotation" + "\"" + time.getTime() + "\"" + ".\n" +
+                "ex:TimeObjective rdf:type agent:Objective . \n" +
+                "ex:TimeObjective info:prescribes " + "\"" + time.getPurpose() + "\"" + ".\n" +
+                " } ";
         client.post("", query);
     }
     public String selectDate(){
         RestClient client = new RestClient();
         client.setServerToQuery();
-        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
-                "PREFIX to: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
-                "select ?date where { to:DateTime ero:has_text_value ?date } ";
+        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>"
+                + "PREFIX time: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
+                "PREFIX agent: <http://www.ontologylibrary.mil/CommonCore/Mid/AgentOntology#>" +
+                "PREFIX info: <http://www.ontologylibrary.mil/CommonCore/Mid/InformationEntityOntology#>" +
+                "select ?day ?month ?year ?purpose {\n" +
+                "ex:DayOff rdf:type event:Act .\n" +
+                "ex:DayOff ero:occurs_on ex:DateDay , \n" +
+                "ex:DateMonth , \n" +
+                "ex:DateYear ; \n" +
+                "ex:DayOff info:prescribes ex:DateObjective" +
+                "ex:DateDay rdf:type time:Day .\n" +
+                "ex:DateDay ero:designator_annotation ?day . \n" +
+                "ex:DayMonth rdf:type time:Month .\n" +
+                "ex:DateMonth ero:designator_annotation ?month . \n" +
+                "ex:DateYear rdf:type time:Year .\n" +
+                "ex:DateYear ero:designator_annotation ?year . \n" +
+                "ex:DateObjective rdf:type agent:Objective .\n" +
+                "ex:DateObjective info:prescribes ?purpose" + ". \n" +
+                "}";
         String response = client.post("", query);
         return response;
     }
@@ -57,66 +105,100 @@ public class Query {
         RestClient client = new RestClient();
         client.setServerToQuery();
         String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
-                "PREFIX ex: <http://www.example.ex/ontologyinstances#>" +
-                "select ?vacation where { ex:Vacation ero:has_text_value ?vacation } ";
+                "PREFIX time: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
+                "select ?vacation where {time:MultiDayTemporalIdentifier ero:occurs_on ?vacation } ";
         String response = client.post("", query);
         return response;
     }
 
-    public String selectPurpose(){
-        RestClient client = new RestClient();
-        client.setServerToQuery();
-        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
-                "PREFIX ex: <http://www.example.ex/ontologyinstances#>" +
-                "select ?purpose where { ex:Purpose ero:has_text_value ?purpose } ";
-        String response = client.post("", query);
-        return response;
-    }
     public String selectTime(){
         RestClient client = new RestClient();
         client.setServerToQuery();
-        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
-                "PREFIX to: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
-                "select ?time where { to:TimeOfDay ero:has_text_value ?time } ";
+        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>"
+                + "PREFIX time: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
+                "PREFIX agent: <http://www.ontologylibrary.mil/CommonCore/Mid/AgentOntology#>" +
+                "PREFIX info: <http://www.ontologylibrary.mil/CommonCore/Mid/InformationEntityOntology#>" +
+                "select ?day ?month ?year ?purpose { \n" +
+                "ex:TimeOff rdf:type event:Act .\n" +
+                "ex:TimeOff ero:occurs_on ex:TimeDay , \n" +
+                "ex:TimeMonth , \n" +
+                "ex:TimeYear , \n" +
+                "ex:TimeTime ;" +
+                "ex:TimeOff info:prescribes ex:TimeObjective" +
+                "ex:TimeDay rdf:type time:Day .\n" +
+                "ex:TimeDay ero:designator_annotation ?day . \n" +
+                "ex:TimeMonth rdf:type time:Month .\n" +
+                "ex:TimeMonth ero:designator_annotation ?month . \n" +
+                "ex:DateYear rdf:type time:Year .\n" +
+                "ex:DateYear ero:designator_annotation ?year . \n" +
+                "ex:TimeTime rdf:type time:MultiHourTemporalIdentifier . \n" +
+                "ex:TimeTime ero:designator_annotation ?time" + ".\n" +
+                "ex:TimeObjective rdf:type agent:Objective . \n" +
+                "ex:TimeObjective info:prescribes ?purpose" + ".\n" +
+                         "}";
         String response = client.post("", query);
         return response;
     }
     public void deleteDate(Date date){
         RestClient client = new RestClient();
         client.setServerToUpdate();
-        String dateQuery = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
-                "PREFIX to: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
-                "delete where { to:DateTime ero:has_text_value " + "\"" + date.toString()+
-                "\"" +
+        String dateQuery = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>"+
+                "PREFIX time: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
+                "PREFIX agent: <http://www.ontologylibrary.mil/CommonCore/Mid/AgentOntology#>" +
+                "PREFIX info: <http://www.ontologylibrary.mil/CommonCore/Mid/InformationEntityOntology#>" +
+                "delete where {\n" +
+                "ex:DayOff rdf:type event:Act .\n" +
+                "ex:DayOff ero:occurs_on ex:DateDay , \n" +
+                "ex:DateMonth , \n" +
+                "ex:DateYear ; \n" +
+                "ex:DayOff info:prescribes ex:DateObjective" +
+                "ex:DateDay rdf:type time:Day .\n" +
+                "ex:DateDay ero:designator_annotation " + "\"" + date.getDay()+ "\"" + ".\n" +
+                "ex:DateMonth rdf:type time:Month .\n" +
+                "ex:DateMonth ero:designator_annotation " + "\"" + date.getMonth()+ "\"" + ".\n" +
+                "ex:DateYear rdf:type time:Year .\n" +
+                "ex:DateYear ero:designator_annotation " + "\"" + date.getYear()+ "\"" + ".\n" +
+                "ex:DateObjective rdf:type agent:Objective .\n" +
+                "ex:DateObjective info:prescribes " + "\"" + date.getPurpose() + "\"" + ".\n" +
                 " } ";
         client.post("", dateQuery);
 
     }
-    public void deleteVacation(Date date){
+    public void deleteVacation(Vacation vacation){
         RestClient client = new RestClient();
         client.setServerToQuery();
         String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
-                "PREFIX to: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
-                "delete where { to:Vacation ero:has_text_value"+ "\"" + date.toString() + " - " + date.toStringEnd() + "\"" + " } ";
+                "PREFIX time: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
+                "delete where {time:MultiDayTemporalIdentifier ero:occurs_on"+ "\"" + vacation.toString() + " - " + vacation.toStringEnd() + "\"" + " } ";
         String response = client.post("", query);
     }
 
-    public void deletePurpose(Date date){
-        RestClient client = new RestClient();
-        client.setServerToUpdate();
-        String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>" +
-                "PREFIX ex: <http://www.example.ex/ontologyinstances#>" +
-                "delete where { ex:Purpose ero:has_text_value" + "\"" + date.getPurpose()
-                + "\"" +
-                " } ";
-        String response = client.post("", query);
-    }
-    public void deleteTime(Date date){
+
+    public void deleteTime(Time time){
         RestClient client = new RestClient();
         client.setServerToUpdate();
         String query = "PREFIX ero: <http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#>"+
-                "PREFIX to: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>"+
-                "delete where {to:TimeOfDay ero:has_text_value" + "\"" + "(" + date.toString() + ") " + date.getTime() + "\"" + "}";
+                "PREFIX time: <http://www.ontologylibrary.mil/CommonCore/Mid/TimeOntology#>" +
+                "PREFIX agent: <http://www.ontologylibrary.mil/CommonCore/Mid/AgentOntology#>" +
+                "PREFIX info: <http://www.ontologylibrary.mil/CommonCore/Mid/InformationEntityOntology#>" +
+                "delete where { \n" +
+                "ex:TimeOff rdf:type event:Act .\n" +
+                "ex:TimeOff ero:occurs_on ex:TimeDay , \n" +
+                "ex:TimeMonth , \n" +
+                "ex:TimeYear , \n" +
+                "ex:TimeTime ;" +
+                "ex:TimeOff info:prescribes ex:TimeObjective" +
+                "ex:TimeDay rdf:type time:Day .\n" +
+                "ex:TimeDay ero:designator_annotation " + "\"" + time.getDay()+ "\"" + ".\n" +
+                "ex:TimeMonth rdf:type time:Month .\n" +
+                "ex:TimeMonth ero:designator_annotation " + "\"" + time.getMonth()+ "\"" + ".\n" +
+                "ex:TimeYear rdf:type time:Year" +
+                "ex:TimeYear ero:designator_annotation " + "\"" + time.getYear()+ "\"" + ".\n" +
+                "ex:TimeTime rdf:type time:MultiHourTemporalIdentifier . \n" +
+                "ex:TimeTime ero:designator_annotation" + "\"" + time.getTime() + "\"" + ".\n" +
+                "ex:TimeObjective rdf:type agent:Objective . \n" +
+                "ex:TimeObjective info:prescribes " + "\"" + time.getPurpose() + "\"" + ".\n" +
+                " } ";
         String response = client.post("", query);
     }
 

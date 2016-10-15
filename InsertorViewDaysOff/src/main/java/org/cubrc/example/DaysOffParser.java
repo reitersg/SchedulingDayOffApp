@@ -32,40 +32,24 @@ public class DaysOffParser {
      } else {
          for (int i = 0; i < date2.size() - 1; i++) {
              date3 = date2.get(i);
-             dateDate = date3.get("date");
-             dateValue = dateDate.get("value");
-             String date = dateValue.asText();
-             sb.append(date + ", ");
+             String dateDay = date3.get("day").get("value").asText();
+             String dateMonth = date3.get("month").get("value").asText();
+             String dateYear = date3.get("year").get("value").asText();
+             String purpose = date3.get("purpose").get("value").asText();
+             Date date = new Date(dateDay, dateMonth, dateYear);
+             date.setPurpose(purpose);
+             sb.append(date.toString() + ": " + date.getPurpose() + ", ");
          }
-         sb.append(date2.get(date2.size() - 1).get("date").get("value").asText());
+         String dateDay = date2.get(date2.size() - 1).get("day").get("value").asText();
+         String dateMonth = date2.get(date2.size() - 1).get("month").get("value").asText();
+         String dateYear = date2.get(date2.size() - 1).get("year").get("value").asText();
+         String purpose = date2.get(date2.size() - 1).get("purpose").get("value").asText();
+         Date date = new Date(dateDay, dateMonth, dateYear);
+         sb.append(date.toString() + ": " + purpose);
          return sb;
      }
     }
-    public static StringBuilder parsePurpose(String jsonPurpose) throws IOException{
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        StringBuilder sb = new StringBuilder();
-        JsonNode node = mapper.readValue(jsonPurpose, JsonNode.class);
 
-        JsonNode results = node.get("results");
-        JsonNode bindings = results.get("bindings");
-        JsonNode date3;
-        JsonNode purposeValue;
-        JsonNode purpose;
-        if (bindings.size() == 0){
-            return new StringBuilder();
-        } else {
-            for (int i = 0; i < bindings.size() - 1; i++) {
-                date3 = bindings.get(i);
-                purpose = date3.get("purpose");
-                purposeValue = purpose.get("value");
-                String individualPurposes = purposeValue.asText();
-                sb.append(individualPurposes + ", ");
-            }
-            sb.append(bindings.get(bindings.size() - 1).get("purpose").get("value").asText());
-            return sb;
-        }
-    }
     public static StringBuilder parseTime(String jsonTime) throws IOException{
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -75,19 +59,27 @@ public class DaysOffParser {
         JsonNode results = node.get("results");
         JsonNode bindings = results.get("bindings");
         JsonNode temp;
-        JsonNode timeValue;
-        JsonNode time;
         if (bindings.size() == 0){
             return new StringBuilder();
         } else {
             for (int i = 0; i < bindings.size() - 1; i++) {
                 temp = bindings.get(i);
-                time = temp.get("time");
-                timeValue = time.get("value");
-                String timeTemp = timeValue.asText();
-                sb.append(timeTemp + ", ");
+                String dateDay = temp.get("day").get("value").asText();
+                String dateMonth = temp.get("month").get("value").asText();
+                String dateYear = temp.get("year").get("value").asText();
+                String time = temp.get("time").get("value").asText();
+                String purpose = temp.get("purpose").get("value").asText();
+                Date date = new Date(dateDay, dateMonth, dateYear);
+                sb.append(date.toString() + ": " + time + ": " + purpose + ", ");
             }
-            sb.append(bindings.get(bindings.size() - 1).get("time").get("value").asText());
+            String dateDay = bindings.get(bindings.size() - 1).get("day").get("value").asText();
+            String dateMonth = bindings.get(bindings.size() - 1).get("month").get("value").asText();
+            String dateYear = bindings.get(bindings.size() - 1).get("year").get("value").asText();
+            String time = bindings.get(bindings.size() - 1).get("time").get("value").asText();
+            String purpose = bindings.get(bindings.size() - 1).get("purpose").get("value").asText();
+
+            Date date = new Date(dateDay, dateMonth, dateYear);
+            sb.append(date.toString() + ": " + time + ": " + purpose);
             return sb;
         }
     }
@@ -117,15 +109,7 @@ public class DaysOffParser {
         }
     }
     public static int daysLeft(StringBuilder sb){
-        List<String> list = Arrays.asList(sb.toString().split("\\s*,\\s*"));
-        ArrayList<Integer> days = new ArrayList<Integer>();
-        Calendar cal = Calendar.getInstance();
-        int currentDay = cal.get(Calendar.DAY_OF_WEEK);
-        for (int i = 0; i < list.size(); i++){
-            Integer month = Integer.parseInt(list.get(i).substring(5, 7));
-            Integer day = Integer.parseInt(list.get(i).substring(7, 9));
 
-        }
 
     return 0;
     }

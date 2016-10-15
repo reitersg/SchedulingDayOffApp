@@ -16,7 +16,7 @@
 <h1>
     Day Off
 </h1>
-<form:form method="POST" action ="/web/addVacation" commandName="Date">
+<form:form method="POST" action ="/web/addVacation" commandName="Vacation">
     <form:select path="month">
         <option disabled selected value> - Start Month - </option>
         <option value="01">January</option>

@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.cubrc.example.DaysOffParser;
 
-import javax.validation.Valid;
 
 
 @Controller
@@ -25,19 +24,19 @@ public class HelloWorldController {
 
 	@RequestMapping(value = "/addTimePeriod1", method = RequestMethod.GET)
 	public ModelAndView daysoffperiod1(){
-		Date date = new Date();
-		return new ModelAndView("daysoffperiod1", "Date", date);
+		Time time = new Time();
+		return new ModelAndView("daysoffperiod1", "Time", time);
 	}
 	@RequestMapping(value = "/vacation", method = RequestMethod.GET)
 	public ModelAndView vacation(){
-		return new ModelAndView("vacation", "Date", new Date());
+		return new ModelAndView("vacation", "Vacation", new Vacation());
 
 	}
 	@RequestMapping(value="/deletevacation", method = RequestMethod.GET)
 	public ModelAndView deletevacation() throws IOException{
 		Query query = new Query();
 		StringBuilder sb = DaysOffParser.parseVacation(query.selectVacation());
-		ModelAndView model = new ModelAndView("deletevacation", "Date", new Date());
+		ModelAndView model = new ModelAndView("deletevacation", "Vacation", new Vacation());
 		model.addObject("vacations", sb.toString());
 		return model;
 	}
@@ -52,181 +51,127 @@ public class HelloWorldController {
 	public ModelAndView deletedaysoff() throws IOException {
 		Query query = new Query();
 		StringBuilder sb = DaysOffParser.parseDate(query.selectDate());
-		StringBuilder purpose = DaysOffParser.parsePurpose(query.selectPurpose());
-		StringBuilder time = DaysOffParser.parseTime(query.selectTime());
 		ModelAndView model = new ModelAndView("deletedaysoff", "Date", new Date());
 		model.addObject("Dates", sb.toString());
-		model.addObject("Purposes", purpose.toString());
 		return model;
 	}
 
 	@RequestMapping(value = "/deletedaysoffperiod", method = RequestMethod.GET)
 	public ModelAndView deletedaysoffperiod() throws IOException{
 		Query query = new Query();
-		StringBuilder sb = DaysOffParser.parseDate(query.selectDate());
-		StringBuilder purpose = DaysOffParser.parsePurpose(query.selectPurpose());
 		StringBuilder time = DaysOffParser.parseTime(query.selectTime());
-		ModelAndView model = new ModelAndView("deletedaysoffperiod", "Date", new Date());
-		model.addObject("Dates", sb.toString());
-		model.addObject("Purposes", purpose.toString());
+		ModelAndView model = new ModelAndView("deletedaysoffperiod", "Time", new Time());
 		model.addObject("Times", time.toString());
 		return model;
 	}
 	@RequestMapping(value ="/addDayOff", method = RequestMethod.POST)
 	public String daysOffSubmit(@ModelAttribute("Date") Date date, Model model) throws IOException{
 
-		if (DateCheck.checkDayOffEmpty(date)){
-			return "daysoff";
-		} else if (DateCheck.checkHoliday(date) == true) {
+		if (DateCheck.checkHoliday(date)) {
 			return "dateerror";
 		}
 		else {
-				if (DateCheck.checkAlreadyExists(date.toString()) == true){
+				if (DateCheck.checkAlreadyExists(date.toString())){
 					return "alreadyexists";
 				} else {
-					String insertDate = "\"" + date.toString() + "\"";
+					System.out.println(date.toString());
+					System.out.println(date.getDay());
+					System.out.println(date.getMonth());
+					System.out.println(date.getYear());
 					Query query = new Query();
-					query.insertDate(insertDate);
-					query.insertPurpose("("+date.toString()+") "+date.getPurpose());
+					query.insertDate(date);
 					String dates = query.selectDate();
-					String purposes = query.selectPurpose();
+					System.out.println(dates);
 					StringBuilder sb = DaysOffParser.parseDate(dates);
-					StringBuilder purpose = DaysOffParser.parsePurpose(purposes);
 					model.addAttribute("dates", sb.toString());
-					model.addAttribute("purposes", purpose.toString());
 					return "result";
 				}
 
 		}
 	}
 	@RequestMapping(value = "/addTimePeriod2", method = RequestMethod.POST)
-	public String timePeriodSubmit(@ModelAttribute("Date") Date date, Model model) throws IOException{
-		if (DateCheck.checkTimePeriodEmpty(date)){
-			return "daysoffperiod1";
-		}
-		else if (DateCheck.checkHoliday(date)) {
+	public String timePeriodSubmit(@ModelAttribute("Time") Time time, Model model) throws IOException{
+
+		if (DateCheck.checkHoliday(new Date(time.getDay(), time.getMonth(), time.getYear()))) {
 			return "dateerror";
 		}
 		else {
-			String insertDate = "\"" + date.toString() + "\"";
-			Query query = new Query();
-			if (DateCheck.checkAlreadyExists(date.toString())){
+			if (DateCheck.checkAlreadyExists(time.toString())){
 				return "alreadyexists";
 			} else {
-				String insertTime = "\"" + "(" + date.toString() + ") " + date.getTime() + "\"";
-				query.insertDate(insertDate);
-				query.insertTime(insertTime);
-				query.insertPurpose("("+date.toString()+") "+date.getPurpose());
-				String dates = query.selectDate();
-				String purposes = query.selectPurpose();
+				Query query = new Query();
+				query.insertTime(time);
 				String times = query.selectTime();
-				StringBuilder sb = DaysOffParser.parseDate(dates);
-				StringBuilder purpose = DaysOffParser.parsePurpose(purposes);
-				StringBuilder time = DaysOffParser.parseTime(times);
-				model.addAttribute("dates", sb.toString());
-				model.addAttribute("purposes", purpose.toString());
-				model.addAttribute("times", time.toString());
+				System.out.println(times);
+				StringBuilder tm = DaysOffParser.parseTime(times);
+				model.addAttribute("times", tm.toString());
 				return "result";
 			}
 		}
 	}
 	@RequestMapping(value ="/addVacation", method = RequestMethod.POST)
-	public String vacationSubmit(@ModelAttribute("Date") Date date, Model model) throws IOException {
-		if (DateCheck.checkVacationEmpty(date)) {
-			return "vacation";
-		} else if (DateCheck.checkSameDate(date)) {
+	public String vacationSubmit(@ModelAttribute("Vacation") Vacation vacation, Model model) throws IOException {
+	 if (DateCheck.checkSameDate(vacation)){
 			return "vacationerror";
 		} else {
-			if (DateCheck.checkVacationAlreadyExists(date.toString() + " - " + date.toStringEnd())) {
+			if (DateCheck.checkVacationAlreadyExists(vacation.toString() + " - " + vacation.toStringEnd())) {
 				return "alreadyexists";
 			} else {
 				Query query = new Query();
-				query.insertVacation(date);
-				String dates = query.selectDate();
-				String purposes = query.selectPurpose();
-				String times = query.selectTime();
-				StringBuilder sb = DaysOffParser.parseDate(dates);
-				StringBuilder purpose = DaysOffParser.parsePurpose(purposes);
-				StringBuilder time = DaysOffParser.parseTime(times);
-				model.addAttribute("dates", sb.toString());
-				model.addAttribute("purposes", purpose.toString());
-				model.addAttribute("times", time.toString());
+				query.insertVacation(vacation);
 				String vacations = query.selectVacation();
-				StringBuilder vacation = DaysOffParser.parseVacation(vacations);
-				System.out.print(vacation.toString());
-				model.addAttribute("vacations", vacation.toString());
+				StringBuilder vc = DaysOffParser.parseVacation(vacations);
+				model.addAttribute("vacations", vc.toString());
 				return "result";
 			}
 		}
 	}
 	@RequestMapping(value = "/deleteDayOff", method = RequestMethod.POST)
 	public String dayOffDelete(@ModelAttribute("Date") Date date, Model model) throws IOException{
-		if (DateCheck.checkDayOffEmpty(date)){
-			return "deletedaysoff";
-		} else {
-			Query query = new Query();
-			query.deleteDate(date);
-			query.deletePurpose(date);
+		Query query = new Query();
+		query.deleteDate(date);
 			String dates = query.selectDate();
-			String purposes = query.selectPurpose();
 			StringBuilder sb = DaysOffParser.parseDate(dates);
-			StringBuilder purpose = DaysOffParser.parsePurpose(purposes);
 			model.addAttribute("dates", sb.toString());
-			model.addAttribute("purposes", purpose.toString());
 			return "result";
-		}
+
 	}
 	@RequestMapping(value = "/deleteTimePeriod", method = RequestMethod.POST)
-	public String timePeriodDelete(@ModelAttribute("Date") Date date, Model model) throws IOException{
-		if (DateCheck.checkTimePeriodEmpty(date)){
-			return "deletedaysoffperiod";
-		} else {
+	public String timePeriodDelete(@ModelAttribute("Time") Time time, Model model) throws IOException{
 
-			Query query = new Query();
-			query.deleteTime(date);
-			query.deleteDate(date);
-			query.deletePurpose(date);
-			String dates = query.selectDate();
-			String purposes = query.selectPurpose();
+		Query query = new Query();
+			query.deleteTime(time);
 			String times = query.selectTime();
-			StringBuilder sb = DaysOffParser.parseDate(dates);
-			StringBuilder purpose = DaysOffParser.parsePurpose(purposes);
-			StringBuilder time = DaysOffParser.parseTime(times);
-			model.addAttribute("dates", sb.toString());
-			model.addAttribute("purposes", purpose.toString());
-			model.addAttribute("times", time.toString());
+			StringBuilder tm = DaysOffParser.parseTime(times);
+			model.addAttribute("times", tm.toString());
 			return "result";
-		}
+
 	}
 	@RequestMapping(value = "/deleteVacation", method = RequestMethod.POST)
-	public String vacationDelete(@ModelAttribute("Date") Date date, Model model) throws IOException{
-		if (DateCheck.checkVacationEmpty(date)){
-			return "deletevacation";
-		} else {
-			Query query = new Query();
-			query.deleteVacation(date);
-			String vacation = query.selectVacation();
-			StringBuilder sb = DaysOffParser.parseVacation(vacation);
+	public String vacationDelete(@ModelAttribute("Vacation") Vacation vacation, Model model) throws IOException{
+		Query query = new Query();
+
+			query.deleteVacation(vacation);
+			String vacations = query.selectVacation();
+			StringBuilder sb = DaysOffParser.parseVacation(vacations);
 			model.addAttribute("vacations", sb.toString());
 			return "result";
-		}
+
 	}
 	@RequestMapping(value="/daysOffList")
 	public String daysOffList(Model model) throws IOException{
 		Query query = new Query();
 		String dates = query.selectDate();
-		String purposes = query.selectPurpose();
 		String times = query.selectTime();
+		System.out.println(times);
 		String vacations = query.selectVacation();
 		StringBuilder sb = DaysOffParser.parseDate(dates);
 //		Calendar cal = Calendar.getInstance(TimeZone.getDefault());
 //		System.out.print(cal.get(Calendar.DATE));
 //		int day = DaysOffParser.daysLeft(sb);
-		StringBuilder purpose = DaysOffParser.parsePurpose(purposes);
 		StringBuilder time = DaysOffParser.parseTime(times);
 		StringBuilder vacation = DaysOffParser.parseVacation(vacations);
 		model.addAttribute("dates", sb.toString());
-		model.addAttribute("purposes", purpose.toString());
 		model.addAttribute("times", time.toString());
 		model.addAttribute("vacations", vacation.toString());
 //		model.addAttribute("dateTime", day);

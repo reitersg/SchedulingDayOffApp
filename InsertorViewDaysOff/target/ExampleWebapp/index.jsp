@@ -3,9 +3,29 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>HelloWorld</title>
+    <title>DayOff</title>
   </head>
   <body>
-    <a href="/web/helloworld.html">Click here to read hello message </a>
+  <h1>Day Off</h1>
+    <a href ="/web/daysoff.html">Select your day off here</a>
+  <br />
+  <br />
+    <a href ="/web/daysOffList.html">Click to view days off and time periods</a>
+  <br />
+  <br />
+    <a href ="/web/deletedaysoff.html">Click here to delete one of your days off</a>
+  <br>
+  <br>
+  <a href = "/web/addTimePeriod1.html">Click here to select time period off</a>
+  <br>
+  <br>
+  <a href = "/web/deletedaysoffperiod.html">Click here to delete one of your time periods</a>
+  <br>
+  <br>
+  <a href="/web/vacation.html">Click here to submit a vacation</a>
+  <br>
+  <br>
+  <a href = "/web/deletevacation.html">Click here to delete a vacation</a>
   </body>
+
 </html>

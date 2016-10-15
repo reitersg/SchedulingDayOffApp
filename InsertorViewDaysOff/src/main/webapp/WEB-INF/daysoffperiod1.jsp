@@ -20,7 +20,7 @@
 <h1>
     Time Off
 </h1>
-<form:form method="POST" action ="/web/addTimePeriod2" commandName="Date">
+<form:form method="POST" action ="/web/addTimePeriod2" commandName="Time">
     <form:select path="month">
         <option disabled selected value> - Month - </option>
         <option value="01">January</option>

@@ -51,7 +51,13 @@ public final class alreadyexists_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("<h1>Date already exists in data, try again</h1>\r\n");
       out.write("<br>\r\n");
       out.write("<br>\r\n");
-      out.write("<a href = \"/web/daysoff.html\">Try Again</a>\r\n");
+      out.write("<a href = \"/web/daysoff.html\">Try again if you tried submitting a day off</a>\r\n");
+      out.write("<br>\r\n");
+      out.write("<br>\r\n");
+      out.write("<a href =\"/web/vacation.html\">Try again if you tried submitting a vacation</a>\r\n");
+      out.write("<br>\r\n");
+      out.write("<br>\r\n");
+      out.write("<a href = \"/web/addTimePeriod1.html\">Try again if you tried submitting a time period</a>\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
