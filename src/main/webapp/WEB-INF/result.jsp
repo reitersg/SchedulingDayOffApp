@@ -24,19 +24,16 @@
     Times: ${times}
     <br>
     <br>
-    Purposes: ${purposes}
-    <br>
-    <br>
     Vacations: ${vacations}
 <br>
 <br>
-    <a href ="http://localhost:9090">Return to Home Page</a>
+    <a href ="/">Return to Home Page</a>
     <br />
     <br />
     <a href = "/web/daysoff.html">Click to submit another day off</a>
     <br>
     <br>
-    <a href="/web/deletedaysoff.hmtl">Click to delete another day off</a
+    <a href="/web/deletedaysoff.hmtl">Click to delete another day off</a>
     <br>
     <br>
     <br>
