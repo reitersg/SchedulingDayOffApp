@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
  */
 public class RestClient {
 
-        private String server = "http://localhost:3030/prototype/query";
+        private String server = "http://localhost:8080/fuseki/dayoff/query";
          private RestTemplate rest;
         public HttpHeaders headers;
         private HttpStatus status;
@@ -38,13 +38,13 @@ public class RestClient {
             return responseEntity.getBody();
         }
         public void setServerToUpdate(){
-            this.server = "http://localhost:3030/prototype/update";
+            this.server = "http://localhost:8080/fuseki/dayoff/update";
             headers.remove("Content-Type");
             headers.add("Content-Type", "application/sparql-update");
 
         }
         public void setServerToQuery(){
-            this.server = "http://localhost:3030/prototype/query";
+            this.server = "http://localhost:8080/fuseki/dayoff/query";
             headers.remove("Content-Type");
             headers.add("Content-Type", "application/sparql-query");
         }
